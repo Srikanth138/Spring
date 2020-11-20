@@ -12,7 +12,7 @@ public class Test {
 		BeanFactory factory=new XmlBeanFactory(res);
 		Student std=(Student)factory.getBean("studentbean");
 		
-		std.displayInfo(); //displayInfo() method in Student class
+		std.displayInfo(); //displayInfo() method is Student class Available
 
 	}
 

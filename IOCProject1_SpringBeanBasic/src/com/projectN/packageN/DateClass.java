@@ -8,6 +8,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 public class DateClass {
+	//IOC -> Inversion of Control
 	
 	public static void main(String args[]){
 		/*

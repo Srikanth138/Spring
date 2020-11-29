@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean id="vcl" class="com.nt.bean.Vechiles">
+  <constructor-arg><value>pluser</value></constructor-arg>
+  <constructor-arg><value>125</value></constructor-arg>
+  <constructor-arg>
+  <set>
+  <value>1200</value>
+  <value>1500</value>
+  <value>1200</value>
+  <value>1800</value>
+  </set>
+  </constructor-arg>
+  
+  </bean>
+  </beans>

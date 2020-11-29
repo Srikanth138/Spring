@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!--  xmlns:p="http://www.springframework.org/schema/p"--> <!-- p means property -->
+  <!--  xmlns:c="http://www.springframework.org/schema/c"--> <!-- c means constructor-arg -->
+ 
+<!--   <bean id="add" class="com.nt.bean.Address"> --> <!-- here use id as a object ref-->
+  
+  <bean name="add" class="com.nt.bean.Address"> <!-- here use name as a object ref -->
+  <constructor-arg value="jagityal"/>
+  <constructor-arg value="telanganna"/>
+  <constructor-arg value="india"/>
+  </bean>
+  
+  <bean id="emp" class="com.nt.bean.Employee">
+  <constructor-arg value="101" type="int"/>
+  <constructor-arg value="Srikanth"/>
+  <constructor-arg ref="add"/> <!-- object reference id called here -->
+  
+  <!-- <constructor-arg><ref bean="add"/></constructor-arg> -->
+  
+  </bean>
+  
+  </beans>

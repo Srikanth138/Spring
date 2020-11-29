@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:c="http://www.springframework.org/schema/c"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <bean id="add" class="com.nt.bean.Address">
+  <constructor-arg value="jagityal"/>
+  <constructor-arg value="telaganna"/>
+  <constructor-arg value="india"/>  
+  </bean>
+  
+  <bean id="emp1" class="com.nt.bean.Employee">
+  <constructor-arg value="101" type="int"/>
+  <constructor-arg value="Srikanth"/>
+  <constructor-arg value="9010316499" type="long"/>
+  </bean>
+  
+  <bean id="emp2" class="com.nt.bean.Employee" parent="emp1">  <!-- emp1 all values here  called -> parent class  class properties child class access -->
+  <constructor-arg ref="add"></constructor-arg>  
+  </bean>  
+
+  </beans>

@@ -2,10 +2,6 @@ package com.nt.bean;
 
 import java.lang.reflect.Method;
 
-import org.aopalliance.aop.Advice;
-import org.springframework.aop.AfterAdvice;
-import org.springframework.aop.AfterReturningAdvice;
-import org.springframework.aop.BeforeAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 
 			 //org.springframework.aop.MethodBeforeAdvice

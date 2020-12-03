@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<aop:aspectj-autoproxy/> <!-- enable this one it will work other wise not work -->
+
+<!-- configure target class -->
+<bean id="target" class="com.nt.bean.Target"/>  
+
+<!-- configure  aspect class  as spring bean-->
+<bean id="trackAspect" class="com.nt.bean.Aspect"/> 
+
+<!-- enable AspectjAOP -->
+<aop:config>
+
+		<!-- Write Pointcut expression -->
+		<aop:pointcut id="pointCutBefore" expression="execution(* com.nt.bean.Target.*(..))"/>
+		
+		<!-- configure spring bean as  aspectjAOP advice class -->
+		<aop:aspect id="myaspect" ref="trackAspect"> <!-- aspect class using Joinpoint -->
+		
+		
+		<!-- @Before -->
+		<aop:before pointcut-ref="pointCutBefore" method="myadvice"/>
+		
+	</aop:aspect>
+</aop:config>
+</beans>
+   
+   

@@ -1,5 +1,4 @@
 package com.projectN.packageN;
-
 import java.util.Date;
 
 import org.springframework.context.ApplicationContext;

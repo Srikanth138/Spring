@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"
+      
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="date" class="java.util.Date">
+<!-- user defined date set -->
+
+<!-- <constructor-arg value="100"/>
+<constructor-arg value="5"/> -->
+<!-- <constructor-arg value="10"/> --><!-- comment this error will raise -> constructor will not possible -->
+
+<property name="year" value="110"/> <!-- year starts 1900+120=2020 -->
+<property name="month" value="3"/> <!-- 0 to 11 months -->
+<!-- <property name="date" value="20"/> --><!-- default date will taken only in property. constructor Will not possible  --> <!-- 1 to 31 date -->
+
+
+</bean> 
+
+
+<bean id="dt" class="com.nt.bean.Aclass">
+
+<property name="id" value="101"/>
+<property name="name" value="srikanth"/>
+
+<constructor-arg value="102"/>
+<constructor-arg value="srikanth"/>
+</bean>
+
+</beans>

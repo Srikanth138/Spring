@@ -17,6 +17,7 @@ public class DateClass {
 		XmlBeanFactory factory=new XmlBeanFactory(res);*/
 				
 		Resource res=new ClassPathResource("applicationContext.xml");
+		@SuppressWarnings("deprecation")
 		BeanFactory factory=new XmlBeanFactory(res);
 		
 		Date d=(Date)factory.getBean("date");

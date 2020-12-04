@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-aop-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-aspects-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-beans-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-context-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-context-support-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-core-5.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Spring/Spring Lib Ref/spring-expression-5.3.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

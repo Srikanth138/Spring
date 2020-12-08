@@ -13,8 +13,15 @@ public class EmployeeDao {
 	}  
 	  
 	public int saveEmployee(Employee e){  
-	    String query="insert into emp1 values('"+e.getId()+"','"+e.getName()+"','"+e.getSalary()+"')";  
-	    return jdbcTemplate.update(query);  
+//		preparedStatement type pass the ?
+	    String query= "insert into emp1 values(?,?,?)"; 
+	    return jdbcTemplate.update(query,e.getSalary(),e.getName(),e.getId()); 
+	    
+	    //Statement type direct pass the varible's
+//		  String query="insert into emp1 values ('"+e.getId()+"','"+e.getName()+"','"+e.getSalary()+"')"; 
+//		  return jdbcTemplate.update(query);
+		 
+	    
 	}  
 	public int updateEmployee(Employee e){  
 	    String query="update emp1 set name='"+e.getName()+"',salary='"+e.getSalary()+"' where id='"+e.getId()+"' ";  
@@ -23,6 +30,5 @@ public class EmployeeDao {
 	public int deleteEmployee(Employee e){  
 	    String query="delete from emp1 where id='"+e.getId()+"' ";  
 	    return jdbcTemplate.update(query);  
-	}  
-	  
+	}   
 }

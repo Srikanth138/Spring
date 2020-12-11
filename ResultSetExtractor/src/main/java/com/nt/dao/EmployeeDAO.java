@@ -34,16 +34,15 @@ public class EmployeeDAO {
 			public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {
 
 				List<Employee> list = new ArrayList<Employee>();
-				Employee e = new Employee();
 
-//				if(rs != null) {
-		        while(rs.next()){ 
-		        
-//					if(rs.next())
-					e.setId(rs.getInt(1));
-					e.setName(rs.getString(2));
-					e.setSalary(rs.getInt(3));
-					list.add(e);
+				if (rs != null) {
+					while (rs.next()) {
+						Employee e = new Employee(); // this will create and access every time and store.
+						e.setId(rs.getInt(1));
+						e.setName(rs.getString(2));
+						e.setSalary(rs.getInt(3));
+						list.add(e);
+					}
 				}
 				return list;
 			}

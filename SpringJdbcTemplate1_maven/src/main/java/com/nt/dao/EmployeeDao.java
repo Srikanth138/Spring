@@ -13,7 +13,7 @@ public class EmployeeDao {
 	}  
 	  
 	public int saveEmployee(Employee e){  
-//		preparedStatement type pass the ?
+//		preparedStatement type pass the ? No 
 	    String query= "insert into emp1 values(?,?,?)"; 
 	    return jdbcTemplate.update(query,e.getSalary(),e.getName(),e.getId()); 
 	    

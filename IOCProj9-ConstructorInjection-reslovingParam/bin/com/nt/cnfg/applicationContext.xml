@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ib" class="com.nt.comps.IndexBased">
+	<constructor-arg index="2" value="90"/>
+	<constructor-arg index="0" value="80"/>
+	<constructor-arg index="1" value="70"/>
+	</bean>
+	
+	<bean id="bt" class="com.nt.comps.ByType">
+	<constructor-arg type="int" value="100"/>
+	<constructor-arg type="long" value="9010316499"/>
+	<constructor-arg type="String" value="Srikanth"/>
+	</bean>
+	
+	<bean id="bn" class="com.nt.comps.ByName">
+	<constructor-arg name="number" value="101"/>
+	<constructor-arg name="phoneNumber" value="8332947754"/>
+	<constructor-arg name="address" value="hyd"/>
+	</bean>
+   
+</beans>

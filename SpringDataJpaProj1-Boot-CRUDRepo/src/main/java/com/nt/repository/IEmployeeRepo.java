@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.nt.entity.Employee;
 
+//here we are calling Employee class and creating the table & Integer is the id to identified  
 public interface IEmployeeRepo extends CrudRepository<Employee,Integer>{
 	
 	//public interface CrudRepository<T, ID> extends Repository<T, ID> {

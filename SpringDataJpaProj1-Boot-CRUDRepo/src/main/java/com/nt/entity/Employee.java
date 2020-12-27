@@ -18,7 +18,7 @@ public class Employee  implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id //finding the PrimaryKey
+	@Id //finding(or)creating the PrimaryKey
 	@GeneratedValue(strategy = GenerationType.AUTO)  //Auto Generated Sequance Number
 	@Column(name="ENO") //create coloum name
 	private  Integer eno;

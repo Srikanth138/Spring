@@ -18,7 +18,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	@Autowired //ByType,ByName, constractor ,default
 	private  IEmployeeRepo  empRepo;
 
-	@Override
+	@Override //#1
 	public int registerEmployee(EmployeeDTO dto) {
 		
 		//convert  dto to Entity
@@ -36,11 +36,11 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	}//method
 
 	
-	@Override
+	@Override //#2
 	public int[] registerEmployeesGroup(List<EmployeeDTO> listDTO) {
 		
 		//convert listDTO to ListEntity obj
-		  List<Employee> listEntity=new ArrayList();
+		  List<Employee> listEntity=new ArrayList<Employee>();
 		 listDTO.forEach(dto->{
 			 Employee entity=new Employee();
 			 BeanUtils.copyProperties(dto, entity);
@@ -60,15 +60,15 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	
 	
 	
-	//-> 
-	/*
-	  @Override
+	 
+	
+	  @Override //#3
 	public long getEmployeesCount() {
 		//use empRepo
 		return empRepo.count();
 	}
-	
-	@Override
+	 
+	@Override //#4
 	public String removeEmployeeById(int id) {
 		//use empRepo
 		  if(empRepo.existsById(id)) {
@@ -79,7 +79,8 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 			  return id+"  employee is not deleted";
 	}
 	
-	@Override
+	  
+	@Override //#5
 	public Optional<EmployeeDTO> getEmployeeById(int id) {
 		//use empRepo
 		Optional<Employee> opt=empRepo.findById(id);
@@ -96,7 +97,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		return optDTO;
 	}//method
 	
-	@Override
+	@Override //#6
 	public String removeEmployeeById1(int id) {
 		//use  repo;
 		Optional<Employee> opt=empRepo.findById(id);
@@ -110,7 +111,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		
 	}//method
 	
-	@Override
+	@Override //#7
 	public Iterable<EmployeeDTO> getAllEmployees() {
 		//use Repo
 		Iterable<Employee> itEntities= empRepo.findAll();
@@ -123,7 +124,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		return itDTOs;
 	}
 	
-	@Override
+	@Override //#8
 	public String removeEmployeesByGivenEntities(List<EmployeeDTO> listDTOs) {
 		//convert listDTOs to listEntities
 		List<Employee> listEntities=new ArrayList();
@@ -136,7 +137,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		     return  "Multiple Employees are deleted";
 	}//method
 	
-	@Override
+	@Override //#9
 	public List<EmployeeDTO> getEmployeesByIds(List<Integer> ids) {
 		//use empRepo
 		List<Employee> listEntities=(List<Employee>) empRepo.findAllById(ids);
@@ -149,6 +150,6 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		});
 		
 		return listDTOs;
-	} */
+	} 
 }//class 
 

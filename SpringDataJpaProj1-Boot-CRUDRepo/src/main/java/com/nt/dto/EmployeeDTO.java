@@ -1,3 +1,4 @@
+//lombok used to generet all the bean Properties
 package com.nt.dto;
 
 import lombok.AllArgsConstructor;

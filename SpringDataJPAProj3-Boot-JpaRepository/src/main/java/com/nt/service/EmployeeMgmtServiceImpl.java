@@ -45,7 +45,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 				asc ? Sort.by(Direction.ASC, property) : Sort.by(Direction.DESC, property));
 		
 		// convert to ListEntities to ListDTO
-		List<EmployeeDTO> listDTO = new ArrayList();
+		List<EmployeeDTO> listDTO = new ArrayList<EmployeeDTO>();
 		listEntities.forEach(entity1 -> {
 			EmployeeDTO dto1 = new EmployeeDTO();
 			BeanUtils.copyProperties(entity1, dto1);

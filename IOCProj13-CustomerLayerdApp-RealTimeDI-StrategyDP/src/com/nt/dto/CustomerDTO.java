@@ -1,6 +1,6 @@
 package com.nt.dto;
 
-public class CustomerDTO {
+public class CustomerDTO implements Serializable{
 	private String cname;
 	private String cadd;
 	private float pAmt;

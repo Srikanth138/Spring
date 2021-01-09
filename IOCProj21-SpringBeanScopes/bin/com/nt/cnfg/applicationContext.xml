@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- singleton scope -->
+	<!-- <bean id="obj1" name="aliasName1"
+	class="com.nt.service.ServiceClass" scope="singleton" />
+	<bean id="obj2" name="aliasName2"
+	class="com.nt.service.ServiceClass" scope="singleton" /> -->
+	
+<!-- singleton scope static method of facoty-method -->
+	<bean id="obj1" name="aliasName1"
+	class="com.nt.service.Printer" scope="prototype" factory-method="getInstance"/>
+	<bean id="obj2" name="aliasName2"
+	class="com.nt.service.Printer" scope="prototype" factory-method="getInstance"/>
+
+
+<!-- prototype scope -->
+	<!-- <bean id="obj1" name="aliasName1"
+		class="com.nt.service.ServiceClass" scope="prototype" />
+	<bean id="obj2" name="aliasName2"
+		class="com.nt.service.ServiceClass" scope="prototype" /> -->
+		
+<!-- request scope -->
+<!-- 	<bean id="obj1" name="aliasName1" -->
+<!-- 		class="com.nt.service.ServiceClass" scope="request" /> -->
+<!-- 	<bean id="obj2" name="aliasName2" -->
+<!-- 		class="com.nt.service.ServiceClass" scope="request" /> -->
+</beans>

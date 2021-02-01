@@ -1,5 +1,8 @@
-package com.nt.beans;
+package com.nt.beans1;
 
+import org.springframework.stereotype.Component;
+
+@Component("dhl")
 public class DHL implements Courier{
 	public DHL() {
 		System.out.println("DHL: 0-param constructor");

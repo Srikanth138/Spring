@@ -4,11 +4,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+import com.nt.beans1.Courier;
+
+@Component("fpkt")
 public class Flipkart {
 	@Autowired
-//	@Qualifier("dtdc")
-//	s@Qualifier(value ="cr1")
+	@Qualifier("dtdc")
+//	@Qualifier(value ="cr1")
 	private Courier courier;
 	
 	public Flipkart() {

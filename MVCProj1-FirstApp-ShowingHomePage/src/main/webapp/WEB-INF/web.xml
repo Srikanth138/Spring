@@ -10,7 +10,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/myCfg.xml</param-value> <!-- find the mycfg.xml -->
+			<param-value>/WEB-INF/dispatcher-myCfg.xml</param-value> <!-- find the dispatcher-myCfg.xml -->
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>

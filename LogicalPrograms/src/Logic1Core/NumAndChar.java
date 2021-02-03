@@ -26,11 +26,11 @@ public class NumAndChar {
 		System.out.println(special);
 
 		System.out.println("------------------------");
-		for (int i = 28; i <= 47; i++) {
-			System.out.print((char) i);
+		for (int i = 0; i <= 256; i++) {
+			System.out.print(i + ":" + (char) i + " ");
 		}
 		System.out.println("\n...................");
-		
+
 		StringBuffer aa = new StringBuffer();
 		StringBuffer aa1 = new StringBuffer();
 		StringBuffer aa2 = new StringBuffer();
@@ -39,7 +39,7 @@ public class NumAndChar {
 			char ch = str.charAt(i);
 			if (ch > 'a' || ch > 'z') {// (char)97
 				aa = aa.append(ch);
-			} else if ((char) 28 <= ch && ch >= (char) 47) {
+			} else if ((char) 48 <= ch || ch >= (char) 57) {
 				aa1 = aa1.append(ch);
 			} else {
 				aa2 = aa2.append(ch);

@@ -1,0 +1,26 @@
+ServletListeners are given to perform event handling on the life cycle of certain objects like ServletContext,request,HttpSession obj's
+Note:-ServeltContextListener ,servletRequestListener and etc..
+
+=>When we deploy the web application the objects will be created in the following order
+1.Listener Objs(if available)
+2.ServletContext obj ****
+3.FilterConfig objs(if available)
+4.Filter objs (if available)
+5.ServletConfig objs
+6.<load-on-startup>enabled servlet class onjs
+
+
+======================================
+1.deployment of the web application
+2.check deployement Directory Strucure(webApp->WEB-INF->Web.xml )
+3.Loading of web.xml and checking its well-formedness and vaildness(url ,/, syntax)
+4.creating ContextLoaderListener class obj
+5.creating ServletContext obj
+6.ContextLoaderListener Creates IOC  by taking 
+WEB-INF/applicationContext.xml as spring bean cfg.. by checking it well formed ness and valid ness.
+in this process the singleton scop bussiness tier comps will be pre-instatiated and injections will takes place,
+7.checks for Filtes cfg(not available)
+8.becoz of <l-o-s> the DS pre-instation and pre-initialization takes place by ServletContainer.
+9.Ds(DispatcherServlet)  creates IOC container by taking <DS logical name-servlet>.xml
+file as the spring bean cfg file by checking its well-formed ness and validness..
+sinces same type IOC container already avaiable, so the already created ContextloaderListener based IOC container will be takem as parent IOC container and the current DS created IOC containr wil be taken child IOC container using NestedContainers concept. in this process the singleton scope presentation tier spring beans will be pre-instantiated and injections takes place.

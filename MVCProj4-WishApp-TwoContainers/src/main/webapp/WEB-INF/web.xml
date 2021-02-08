@@ -5,12 +5,11 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 
-	<!-- To specify the name and location of spring bean cfg file for contextLoaderListner 
-		created parent LOC Contener -->
+	<!--
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/mycfg1.xml</param-value>
-	</context-param>
+	</context-param> -->
 
 	<!-- Bootstraps the root web application context before servlet initialization -->
 	<listener>
@@ -22,12 +21,6 @@
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-
-		<!-- Optional why because you give same logical name to the LogicalName-servlet.xml -->
-		<!-- <init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-		</init-param> -->
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 

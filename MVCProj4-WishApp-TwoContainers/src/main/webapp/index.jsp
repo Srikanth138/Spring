@@ -1,1 +1,1 @@
-<a href="welcome.htm">click</a>
+<jsp:forward page="welcome.htm"/>

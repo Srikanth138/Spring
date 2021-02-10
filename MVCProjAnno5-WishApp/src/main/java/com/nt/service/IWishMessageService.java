@@ -1,5 +1,5 @@
 package com.nt.service;
 
 public interface IWishMessageService {
-	public String generateWishMessage();
+    public String  generateWishMessage();
 }

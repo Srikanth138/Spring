@@ -2,9 +2,6 @@ package date;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.spi.CalendarDataProvider;
-
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class DateDetails {
 	@SuppressWarnings("deprecation")

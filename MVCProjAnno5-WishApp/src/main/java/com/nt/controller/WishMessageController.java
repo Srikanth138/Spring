@@ -31,15 +31,11 @@ public class WishMessageController {
 		return "result";
 	}
 
-//	@RequestMapping("/wish")
-//	public void getMessage(ModelAndView mav) {
-//		// use serivce
-//		String msg = service.generateWishMessage();
-//		// Model data
-//		mav.addObject("sysDate", new Date());
-//		mav.addObject("wMsg", msg);
-//		// set LVN
-//		mav.setViewName("result");
-//	}
+	/*
+	 * @RequestMapping("/wish") public void getMessage(ModelAndView mav) { //
+	 * use serivce String msg = service.generateWishMessage(); // Model data
+	 * mav.addObject("sysDate", new Date()); mav.addObject("wMsg", msg); // set
+	 * LVN mav.setViewName("result"); }
+	 */
 
 }// class

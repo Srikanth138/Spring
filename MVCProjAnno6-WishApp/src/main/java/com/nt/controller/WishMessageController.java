@@ -17,6 +17,7 @@ public class WishMessageController {
 //	@RequestMapping(value={"/welcome","/register"}, method =RequestMethod.POST)
 //	@RequestMapping(value={"/welcome","/register"}, method = RequestMethod.GET)
 	@RequestMapping(value={"/welcome","/register"}, method = {RequestMethod.GET,RequestMethod.POST})
+//	@RequestMapping(value="/")
 	public String showHome(HttpServletRequest req) {
 		System.out.println("Request :"+req.getMethod());
 		return "home"; // lvn

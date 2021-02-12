@@ -1,6 +1,5 @@
-<%@ page isELIgnored="false" language="java"
-	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-
-<h1 style="text-align: center">
-	<a href="wish">get WishMessage</a>
-</h1>
+<form action="register"  method="POST">
+        <input type="submit" value="send"/>
+  </form>
+  <br>
+  <a href="test/register">Get Results</a>

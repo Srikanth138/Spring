@@ -1,5 +1,6 @@
 package date;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -8,7 +9,8 @@ public class DateDetails {
 	public static void main(String args[]) {
 
 				
-
+		
+		
 		Calendar c = Calendar.getInstance();
 		System.out.println(c.getWeekYear());
 		
@@ -16,9 +18,14 @@ public class DateDetails {
 		System.out.println(hour);
 		
 		Date d = new Date();
-		
 		System.out.println(d.getClass());
+		
+		
+		SimpleDateFormat d5=new SimpleDateFormat("dd-yyyy-MM");
+		System.out.println("format Set   "+d5.format(d));
+		
 
+		
 		//d.setDate(10);
 		System.out.println("DATE :" + d.getDate());// 1 to 31
 

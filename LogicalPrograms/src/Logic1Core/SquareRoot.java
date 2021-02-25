@@ -14,7 +14,7 @@ public class SquareRoot {
 	public void root() {
 		System.out.println("enter a number Root");
 		int a = sc.nextInt();
-		System.out.println(Math.pow(a, 0.5));
+		System.out.println((int)Math.pow(a, 0.5));
 	}// root
 
 	public static void main(String args[]) {

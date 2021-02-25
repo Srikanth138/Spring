@@ -44,7 +44,7 @@ public class OddNumber {
 	public static void main(String[] args) {
 		System.out.println("enter a number...");
 //		OddNumber od = new OddNumber();
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
 //		System.out.println("ur number is ::" + od.odd(sc.nextInt()));
 //		System.out.println("ur number is ::" + od.odd());
 //		od.odd().forEach(System.out::println); //object creation to call
@@ -72,7 +72,7 @@ public class OddNumber {
 		 * 
 		 * } else { System.out.println("number is wrong.."); }//else
 		 */
-		sc.close();
+//		sc.close();
 	}// main
 
 }// class

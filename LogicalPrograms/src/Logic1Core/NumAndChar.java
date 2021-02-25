@@ -6,7 +6,8 @@ public class NumAndChar {
 	public static void main(String[] args) {
 		String str = "geeks01$$for02geeks03!@!!";
 
-		StringBuffer alpha = new StringBuffer(), num = new StringBuffer(),
+		StringBuffer alpha = new StringBuffer(),
+				num = new StringBuffer(),
 				special = new StringBuffer();
 
 		for (int i = 0; i < str.length(); i++) {

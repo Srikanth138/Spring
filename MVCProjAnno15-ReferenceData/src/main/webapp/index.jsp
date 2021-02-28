@@ -1,2 +1,1 @@
-<a href="customer">click</a>
-<%-- <jsp:forward page="customer"/> --%>
+<jsp:forward page="customer"/>

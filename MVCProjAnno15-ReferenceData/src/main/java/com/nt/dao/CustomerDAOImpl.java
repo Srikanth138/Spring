@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nt.model.Customer;
 
-@Repository("custDAO")
+@Repository("custDAO") //@Repository() it containces jdbc connection logic
 public class CustomerDAOImpl implements ICustomerDAO {
 	private static final String CUSTOMER_INSERT_QUERY = "INSERT INTO MVC_CUSTOMER VALUES(CNO_SEQ1.NEXTVAL,?,?,?)";
 	@Autowired

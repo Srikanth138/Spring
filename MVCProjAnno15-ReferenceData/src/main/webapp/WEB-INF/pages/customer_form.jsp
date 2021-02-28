@@ -23,8 +23,8 @@ span {
 	<table align="center" bgcolor="cyan">
 		<tr>
 			<td>Customer name::</td>
-			<td><form:input path="cname" /><span id="cnameErr"></span> <form:errors
-					cssStyle="color:red" path="cname" /></td>
+			<td><form:input path="cname" /><span id="cnameErr"></span> 
+			<form:errors cssStyle="color:red" path="cname" /></td>
 		</tr>
 		<tr>
 			<td>Customer address::</td>
@@ -34,7 +34,7 @@ span {
 		<tr>
 			<td>Customer billAmt::</td>
 			<td><form:input path="billAmt" /><span id="billAmtErr"></span>
-			<form:errors cssStyle="color:red" path="billAmt" /></td>
+				<form:errors cssStyle="color:red" path="billAmt" /></td>
 		</tr>
 
 		<tr>

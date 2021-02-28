@@ -1,6 +1,5 @@
 package com.nt.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;

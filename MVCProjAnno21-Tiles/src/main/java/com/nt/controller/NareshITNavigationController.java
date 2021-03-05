@@ -19,7 +19,7 @@ public class NareshITNavigationController {
 
 	@GetMapping("/address")
 	public String showAddressPage(Map<String, Object> map) {
-		map.put("phoneNo", 9999999L);
+		map.put("phoneNo", 999999L);
 		return "addressDef"; // tile definitation as lvn
 
 	}

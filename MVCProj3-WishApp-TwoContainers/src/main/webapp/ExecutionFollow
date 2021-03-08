@@ -7,7 +7,7 @@ Note:-ServeltContextListener ,servletRequestListener and etc..
 3.FilterConfig objs(if available)
 4.Filter objs (if available)
 5.ServletConfig objs
-6.<load-on-startup>enabled servlet class onjs
+6.<load-on-startup>enabled servlet class objs
 
 
 ======================================

@@ -1,16 +1,18 @@
-<%@taglib uri="http://tiles.apache.org/tags-tiles"  prefix="tiles"%>
+<%@page isELIgnored="true" %>
+<%@taglib uri="http://tiles.apache.org/tags-tiles"  prefix="tiles" %>
 <head>
-   <title><tiles:insertAttribute name="title"/> </title>
+  <title><tiles:insertAttribute name="title"  ignore="true"/>   </title>
 </head>
-<table width="100%" height="100%"  border="0">
-   <tr height="15%" bgcolor="orange">
-     <td colspan="2"> <tiles:insertAttribute name="header"/> </td>
-   </tr>
-   <tr height="70%" bgcolor="pink">
-     <td width="20%"  bgcolor="cyan"> <tiles:insertAttribute name="menu"/> </td>
-     <td width="70%"> <tiles:insertAttribute name="body"/> </td>
-   </tr>
-   <tr height="15%"  bgcolor="yellow">
-     <td colspan="2"> <tiles:insertAttribute name="footer"/> </td>
-   </tr>
+
+<table border="1" width="100%" height="100%">
+  <tr height="30%" bgcolor="yellow">
+     <td colspan="2"><tiles:insertAttribute name="header"/>     </td>
+  </tr>
+  <tr height="60%">
+     <td width="30%" bgcolor="orange"><tiles:insertAttribute name="menu"/></td>
+     <td width="70%"  bgcolor="cyan"><tiles:insertAttribute name="body"/></td>
+  </tr>
+  <tr  height="10%" bgcolor="pink">
+      <td colspan="2"><tiles:insertAttribute name="footer"/>  </td>
+  </tr>
 </table>

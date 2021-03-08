@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false" %>
 
- <br>
-   <a href="faculty">faculties</a> <br>
-   <a href="course">courses</a> <br>
-   <a href="address">contact Info</a> <br>
- <br>       
-       
+  <h4 style="color:red;text-align:left"><a href="java">Java courses</a> </h4>
+  <br>
+  <h4 style="color:red;text-align:left"><a href="dotnet">dotNet courses</a> </h4>
+  <br>
+  <h4 style="color:red;text-align:left"><a href="oracle">Oracle courses</a> </h4>
+  

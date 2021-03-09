@@ -18,7 +18,7 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
-	// tomcat-embed-jasper add this jar to run the standelone/internall server add
+	//tomcat-embed-jasper add this jar to run the standelone/internall server add
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
 
 }

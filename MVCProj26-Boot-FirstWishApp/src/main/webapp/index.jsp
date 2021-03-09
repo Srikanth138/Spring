@@ -1,2 +1,2 @@
 <%--     <jsp:forward page="welcome"/> --%>
-<a href="welcome">welcome</a>
+<a href="welcome">click</a>

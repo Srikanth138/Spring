@@ -1,16 +1,25 @@
-<%@ page isELIgnored="false"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page isELIgnored="false"  %>
+<%@taglib uri="http://www.springframework.org/tags/form"  prefix="form"  %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 
-<form:form modelAttribute="login">
-	<!-- method is not requied because prerequed method is POST here modelAttribute -->
-	<table bgcolor="cyan" align="center">
-		<tr>
-			<td>Enter Name ::</td>
-			<td><input type="text" name="name"> <%-- 			<form:input path="name" /> --%></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="register" /></td>
-		</tr>
-	</table>
-
+<form:form  modelAttribute="userForm"> <!-- userForm @ModelAttribute in GetMapping -->
+<%-- <form:form> <!-- modelAttribute="userForm"  is mandetory --> --%>
+   <table  bgcolor="cyan" align="center">
+      <tr>
+         <td>Login username::  </td>
+         <td><form:input path="username"/> </td>
+      </tr>
+      <tr>
+         <td>Login Password::  </td>
+         <td><form:input path="password"/> </td>
+      </tr>
+      <tr>
+         <td><input type="submit"  value="Login"> </td>
+      </tr>
+   </table>
 </form:form>
+
+<br><br>
+<c:if test="${!empty resultMsg }" >
+   <h1 style="color:blue">Result is :: ${resultMsg} </h1>
+ </c:if>

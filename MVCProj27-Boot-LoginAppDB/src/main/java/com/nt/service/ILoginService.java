@@ -1,6 +1,7 @@
 package com.nt.service;
 
-public interface ILoginService {
-	public String login();
+import com.nt.entity.User;
 
+public interface ILoginService {
+    public   String   validate(User user);
 }

@@ -24,7 +24,7 @@ public class WishMessageController {
 	public String getValues(Map<String, Object> map) {
 		String msg = "hello... <br> Welcome to first SpringBoot Application";
 		map.put("name", service.getMassege());
-		service.getMsg();
+		service.getMsg(); //void type how to store in a variable
 		map.put("c", "");
 		map.put("msg", msg);
 

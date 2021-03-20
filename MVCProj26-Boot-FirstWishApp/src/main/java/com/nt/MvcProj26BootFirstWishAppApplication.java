@@ -9,5 +9,4 @@ public class MvcProj26BootFirstWishAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MvcProj26BootFirstWishAppApplication.class, args);
 	}
-
 }

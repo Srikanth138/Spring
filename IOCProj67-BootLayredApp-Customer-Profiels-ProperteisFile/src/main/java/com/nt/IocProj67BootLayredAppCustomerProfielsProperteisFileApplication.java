@@ -6,6 +6,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.Banner.Mode;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -37,7 +38,9 @@ public class IocProj67BootLayredAppCustomerProfielsProperteisFileApplication {
 	}
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(
+		SpringApplication application=new SpringApplication();
+		application.setBannerMode(Mode.OFF);
+		ApplicationContext ctx = application.run(
 				IocProj67BootLayredAppCustomerProfielsProperteisFileApplication.class,
 				args);
 		try {

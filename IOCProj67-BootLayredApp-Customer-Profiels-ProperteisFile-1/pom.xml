@@ -11,7 +11,7 @@
 	<groupId>ComapanyName</groupId>
 	<artifactId>MVCProjOWN</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>IOCProj67-BootLayredApp-Customer-Profiels-ProperteisFile-1</name>
+	<name>MVCProj-OWN</name>
 	<description>SpringBootMVC</description>
 	<properties>
 		<java.version>11</java.version>

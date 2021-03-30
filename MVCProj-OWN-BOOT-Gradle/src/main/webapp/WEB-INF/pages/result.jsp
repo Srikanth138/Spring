@@ -4,4 +4,4 @@
  <h1 style="color: green;text-align: center;">THIS IS RESULT PAGE</h1>
  
  <br></br>
- <a href="index.html">home</a>
+ <a href="index.jsp">home</a>

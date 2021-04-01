@@ -21,7 +21,7 @@ public class StudentController {
 	@PostMapping("/student")
 	public String register(Map<String, Object> map,
 			@ModelAttribute("stud") Student st) {
-		System.out.println(st);
+		System.out.println(st); //toString() Method will be print
 		// make form data as the model attribute(result)
 		map.put("formData", st);
 

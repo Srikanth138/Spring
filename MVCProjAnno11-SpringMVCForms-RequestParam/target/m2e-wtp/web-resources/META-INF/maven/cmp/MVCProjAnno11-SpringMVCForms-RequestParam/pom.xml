@@ -63,7 +63,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>MVCProjAnno9-DataBinding-Forms</finalName>
+		<finalName>MVCProjAnno11-SpringMVCForms-RequestParam</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>

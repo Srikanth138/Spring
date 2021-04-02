@@ -29,11 +29,8 @@ public class CustomerController {
 	private CustomerValidator validator;
 
 	@GetMapping("/customer")
-	public String showForm(@ModelAttribute("cust") Customer cust) { // initial
-																	// phase
-																	// request
-																	// (form
-																	// launching)
+	public String showForm(@ModelAttribute("cust") Customer cust) { 
+		// initial phase request (form launching)
 		cust.setCadd("hyd");
 		// return lvn
 		return "customer_form";
@@ -67,13 +64,8 @@ public class CustomerController {
 		// use service
 		String resultMsg = service.register(cust);
 		// keep result in RedirectAttributes object
-		redirectAttrs.addFlashAttribute("resultMsg", resultMsg); // make this
-																	// model
-																	// data
-																	// avaliable
-																	// to next
-																	// redirected
-																	// request..
+		redirectAttrs.addFlashAttribute("resultMsg", resultMsg); 
+		// make this model data avaliable to next redirected request..
 		redirectAttrs.addFlashAttribute("modelData", cust);
 		// return LVN
 		return "redirect:show";

@@ -20,7 +20,7 @@ public class JdbcTemplateDirectMethodsTest {
 		IEmployeeMgmtService service = ctx.getBean("empService",
 				IEmployeeMgmtService.class);
 		// invoke methods
-		try {
+		/*try {
 			System.out.println("EmpsCount::" + service.fetchEmpsCount());
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
@@ -42,14 +42,14 @@ public class JdbcTemplateDirectMethodsTest {
 				System.out.println(row.getKey() + "   " + row.getValue());
 			});
 
-			/*
-			 * //Convert Map keys to Set Set keySet= new HashSet(map.keySet());
-			 * keySet.forEach(key-> System.out.println(key));
-			 * 
-			 * //Convert Map values to Set Set valueSet= new
-			 * HashSet(map.values()); valueSet.forEach(value->
-			 * System.out.println(value));
-			 */
+			
+			  //Convert Map keys to Set Set keySet= new HashSet(map.keySet());
+			  keySet.forEach(key-> System.out.println(key));
+			  
+			  //Convert Map values to Set Set valueSet= new
+			  HashSet(map.values()); valueSet.forEach(value->
+			  System.out.println(value));
+			 
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
@@ -83,7 +83,36 @@ public class JdbcTemplateDirectMethodsTest {
 			}
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
+		} */
+		
+		/*System.out.println("===============================");
+		 //sequance is not create it then execute
+		try {
+			System.out.println(service.registerEmployee("raja", "CLERK",90000.0f));
 		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		*/
+		
+		/*System.out.println("===============================");
+		try {
+			System.out.println("Before hike salary"+service.fetchEmpSalaryByEno(7499));
+			System.out.println(service.hikeEmployeeSalary(7499, 10.0f));
+			System.out.println("After hike salary"+service.fetchEmpSalaryByEno(7499));
+		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		*/
+		
+		/*System.out.println("===============================");
+		try {
+			System.out.println(service.fireEmployeesBySalaryRange(4000.0f, 8000.0f));
+		}
+		catch(DataAccessException dae) {
+			dae.printStackTrace();
+		}*/
 		((AbstractApplicationContext) ctx).close();
 	}
 

@@ -2,6 +2,7 @@ package com.nt.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nt.bo.EmployeeBO;
 
-@Repository("empDAO")
+//@Repository("empDAO")
 public class EmployeeDAOImpl implements IEmployeeDAO {
 	private static final String GET_EMP_BY_ENO = "SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE EMPNO=?";
 	@Autowired
@@ -37,4 +38,11 @@ public class EmployeeDAOImpl implements IEmployeeDAO {
 			return bo;
 		}// mapRow(-,-)
 	}// inner class
+
+	@Override
+	public List<EmployeeBO> getEmployeesByDesgs(String desg1, String desg2,
+			String desg3) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }// DAO classFs

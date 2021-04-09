@@ -1,5 +1,7 @@
 package com.nt.test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,17 +19,40 @@ public class CallbackMethodsTest {
 		// get Service class obj
 		IBookStoreMgmtService service = ctx.getBean("bookService",
 				IBookStoreMgmtService.class);
-		//invoke method
-		  try {
-			  BookInfo info=service.fetchBookById(100);
-			  System.out.println(info);
-		  }
-		  catch(DataAccessException dae) {
-			  dae.printStackTrace();
-		  }
+		// invoke method
+		try {
+			BookInfo info = service.fetchBookById(100);
+			System.out.println(info);
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+
+		System.out.println("====================");
+
+		try {
+			List<BookInfo> list = service.fetchBooksByCategories("JAVA", "c++",
+					"PHP");
+			list.forEach(System.out::println);
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+
+		System.out.println("=====================");
+
+		try {
+			BookInfo info = new BookInfo();
+			info.setBookName("SIJ");
+			info.setAuthor("MP");
+			info.setCategory("JAVA");
+			info.setPrice(900.0f);
+			info.setStatus("NO");
+			System.out.println(service.addBook(info));
+		} catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
+		
 		// close container
 		((AbstractApplicationContext) ctx).close();
-
 	}
 
 }

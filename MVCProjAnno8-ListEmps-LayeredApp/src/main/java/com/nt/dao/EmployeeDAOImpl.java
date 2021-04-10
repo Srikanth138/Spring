@@ -21,8 +21,8 @@ public class EmployeeDAOImpl implements IEmployeeDAO{
 
 	@Override
 	public List<EmployeeBO> getAllEmployees() {
-		List<EmployeeBO> listBO=jt.query(GET_ALL_EMPS_QUERY, new EmployeeExtractor());
-		return listBO;
+		List<EmployeeBO> listBO1=jt.query(GET_ALL_EMPS_QUERY, new EmployeeExtractor());
+		return listBO1;
 	}
 	
 	//nested inner class (static inner class) 

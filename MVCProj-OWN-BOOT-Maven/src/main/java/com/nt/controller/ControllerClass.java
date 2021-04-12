@@ -8,6 +8,7 @@ public class ControllerClass {
 	
 	@RequestMapping("/home")
 	public String go() {
+		System.out.println("ControllerClass.go()");
 		return "result";
 	}
 

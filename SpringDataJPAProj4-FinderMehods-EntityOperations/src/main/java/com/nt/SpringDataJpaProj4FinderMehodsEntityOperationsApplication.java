@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.nt.entity.Employee;
 import com.nt.repository.IEmployeeRepo;
 
 @SpringBootApplication
@@ -22,7 +23,7 @@ public class SpringDataJpaProj4FinderMehodsEntityOperationsApplication {
 
 		// invoke method
 //		 repo.findByEadd("hyd").forEach(System.out::println);
-
+		
 //		 repo.findByEname("raja").forEach(System.out::println);
 //		 repo.findByEnameIs("raja").forEach(System.out::println);
 //		 repo.findByEnameEquals("raja").forEach(System.out::println);

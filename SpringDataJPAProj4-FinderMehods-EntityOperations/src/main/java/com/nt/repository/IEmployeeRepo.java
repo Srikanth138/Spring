@@ -10,7 +10,8 @@ import com.nt.entity.Employee;
 public interface IEmployeeRepo extends JpaRepository<Employee, Integer>{
 	
 	//SELECT ENO,ENAME,EADD,ESALARY FROM  EMPLOYEE WHERE  EADD=?
-    public  List<Employee>  findByEadd(String addrs);
+//    public  List<Employee>  findByEadd(String addrs);
+ 
     //SELECT ENO,ENAME,EADD,ESALARY FROM  EMPLOYEE WHERE  ENAME=?
     public  List<Employee>  findByEname(String name);
     public  List<Employee>  findByEnameIs(String name);

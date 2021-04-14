@@ -21,8 +21,8 @@ public class SpringDataJpaProj3BootJpaRepositoryApplication {
 		System.out.println(".........abcdefghijklmnopqrstuvwxyz..........");
 		
 		//invoke methods
-//		System.out.println("EMP Details"+service.fetchEmployeeById(4));
-		service.fetchEmployeesExampleData(new EmployeeDTO(null,"srikanth","hyd",80000.0f),"ename", true).forEach(System.out::println);
+//		System.out.println("EMP Details"+service.fetchEmployeeById(12));
+//		service.fetchEmployeesExampleData(new EmployeeDTO(null,"srikanth","hyd",80000.0f),"ename", true).forEach(System.out::println);
 		
 		//close
 		((ConfigurableApplicationContext) ctx).close();

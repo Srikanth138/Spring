@@ -51,7 +51,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 	public List<EmployeeDTO> getAllEmployeesBySorting(boolean asc, String... properties) {
 		//use  Repo
 		List<Employee> listEntities=(List<Employee>) empRepo.findAll(asc?Sort.by(Direction.ASC, properties): 
-			                                                                                                         Sort.by(Direction.DESC,properties));
+			                                                             Sort.by(Direction.DESC,properties));
 		//convert  listEntities to listDTos
 		List<EmployeeDTO> listDTOs=new ArrayList();
 		listEntities.forEach(entity->{

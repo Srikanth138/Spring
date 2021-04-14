@@ -15,6 +15,7 @@ public interface IEmployeeRepo extends JpaRepository<Employee, Integer> {
 	// @Query("FROM com.nt.entity.Employee ")
 	// @Query("FROM Employee ")
 	// @Query("FROM Employee e ")
+//	@Query("SELECT  * FROM  Employee e ")
 	@Query("SELECT  e FROM  Employee e ")
 	public List<Employee> fetchAllEmployees();
 

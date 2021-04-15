@@ -1,1 +1,2 @@
-<a href="home">Insert Page</a>
+<jsp:forward page="home"/>
+<!-- <a href="home">Insert Page</a> -->

@@ -3,6 +3,7 @@ package com.nt.controller;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.nt.dto.EmployeeDTO;
 import com.nt.entity.Employee;
 import com.nt.service.IEmployeeMgmtService;
+
+import ch.qos.logback.core.joran.util.beans.BeanUtil;
 
 @Controller
 public class EmpController {
@@ -40,7 +43,8 @@ public class EmpController {
 	public String get(@RequestParam("name") String ename,
 			@RequestParam("add") String eadd,
 			@RequestParam("salary") Float eSalary, Map<String, Object> map,
-			@ModelAttribute("emp") EmployeeDTO dto) {
+			// @ModelAttribute("emp") EmployeeDTO dto,
+			@ModelAttribute("atemp") Employee ee) {
 
 		// we are access the data from the end user and pass to dto class
 		// EmployeeDTO dto1 = new EmployeeDTO(ename, eadd, eSalary);
@@ -60,7 +64,6 @@ public class EmpController {
 
 		// copy recived data (no) to dto
 		// BeanUtils.copyProperties(dto1, dto);
-
 		return "result";
 	}
 
@@ -72,21 +75,27 @@ public class EmpController {
 	}
 
 	@RequestMapping("/select")
-	public String select(@RequestParam("id") int id, Model model) {
+	public String select(@RequestParam("eno") int id, Model model,
+			@ModelAttribute("empFrm") Employee e) {
 		Optional<EmployeeDTO> select = service.getEmployeeById(id);
-		model.addAttribute("select", select);
-		return "select";
+		// model.addAttribute("select", select);
+		BeanUtils.copyProperties(select, e);
+		return "update";
 	}
 
 	@RequestMapping("/update")
-	public String update(@RequestParam("id") Integer id,
-			@RequestParam("name") String name, @RequestParam("add") String add,
-			@RequestParam("salary") Float Salary, Map<String, String> map) {
+	public String update(
+			@RequestParam("eno") Integer id,
+			@RequestParam("ename") String name, @RequestParam("eadd") String add,
+			@RequestParam("eSalary") Float Salary,
+			Map<String, String> map,
+			@ModelAttribute("empFrm") Employee ee) {
 
 		Employee e = new Employee(id, name, add, Salary);
-		String update = service.updateEmployee(e);
-		map.put("update", update);
-		return "update";
+		BeanUtils.copyProperties(e, ee);
+		String update = service.updateEmployee(ee);
+		map.put("dto", update);
+		return "result";
 	}
 
 }

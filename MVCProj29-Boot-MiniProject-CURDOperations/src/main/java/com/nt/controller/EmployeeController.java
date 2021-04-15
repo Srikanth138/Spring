@@ -61,7 +61,7 @@ public class EmployeeController {
 		String msg = service.updateEmployee(emp);
 		// result in model attributes as flash attributes
 		attrs.addFlashAttribute("resultMsg", msg);
-		return "redirect:report";
+		return "redirect:report"; //run and see easyly understand.
 	}// method
 
 	@GetMapping("/delete")

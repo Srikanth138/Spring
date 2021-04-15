@@ -52,7 +52,7 @@
 			</tr>
 			<tr>
 				<td>Enter ID::</td>
-				<td><input type="text" name="id"></td>
+				<td><input type="text" name="eno"></td>
 			</tr>
 			<tr>
 				<td colspan="2"
@@ -93,20 +93,19 @@
 					style="table-layout: inherit; text-align: center; background: green; text-shadow: maroon;">UPDATE
 					THE DETAILS BASED ON THE ID</td>
 			</tr>
-
 			<tr>
 				<td>Enter ID::</td>
-				<td><input type="text" name="id"></td>
+				<td><input type="text" name="eno"></td>
 			<tr>
 			<tr>
 				<td>Enter name::</td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="ename"></td>
 			<tr>
 				<td>Enter address::</td>
-				<td><input type="text" name="add"></td>
+				<td><input type="text" name="eadd"></td>
 			<tr>
 				<td>Enter salary::</td>
-				<td><input type="text" name="salary"></td>
+				<td><input type="text" name="eSalary"></td>
 			<tr>
 				<td>
 			<tr>
@@ -114,5 +113,7 @@
 			</tr>
 		</table>
 	</form>
+
+
 </body>
 </html>

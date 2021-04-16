@@ -78,17 +78,18 @@ public class EmpController {
 	public String select(@RequestParam("eno") int id, Model model,
 			@ModelAttribute("empFrm") Employee e) {
 		Optional<EmployeeDTO> select = service.getEmployeeById(id);
-		// model.addAttribute("select", select);
+		
+		model.addAttribute("select", select);
+		
 		BeanUtils.copyProperties(select, e);
 		return "update";
 	}
 
 	@RequestMapping("/update")
-	public String update(
-			@RequestParam("eno") Integer id,
-			@RequestParam("ename") String name, @RequestParam("eadd") String add,
-			@RequestParam("eSalary") Float Salary,
-			Map<String, String> map,
+	public String update(@RequestParam("eno") Integer id,
+			@RequestParam("ename") String name,
+			@RequestParam("eadd") String add,
+			@RequestParam("eSalary") Float Salary, Map<String, String> map,
 			@ModelAttribute("empFrm") Employee ee) {
 
 		Employee e = new Employee(id, name, add, Salary);

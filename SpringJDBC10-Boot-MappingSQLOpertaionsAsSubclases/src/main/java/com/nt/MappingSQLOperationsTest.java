@@ -2,27 +2,29 @@ package com.nt;
 
 import java.util.List;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
 
 import com.nt.model.PoliticalParty;
 import com.nt.service.IPoliticalPartyMgmtService;
 
-public class App {
+@SpringBootApplication
+public class MappingSQLOperationsTest {
 	public static void main(String[] args) {
 		// create IOC container
-		ApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"com/nt/cfgs/applicationContext.xml");
+		ApplicationContext ctx = SpringApplication
+				.run(MappingSQLOperationsTest.class, args);
 		// get Service class obj
 		IPoliticalPartyMgmtService service = ctx.getBean("partyService",
 				IPoliticalPartyMgmtService.class);
 		try {
 			PoliticalParty party = service
-					.fetchPoliticalPartyDetailsByPartyId(1);
+					.fetchPoliticalPartyDetailsByPartyId(179);
 			if (party != null)
-				System.out.println("1 party Details are ::" + party);
+				System.out.println("179 party Details are ::" + party);
 			else
 				System.out.println("party not found");
 		} catch (DataAccessException dae) {
@@ -34,7 +36,7 @@ public class App {
 		try {
 			List<PoliticalParty> list = service
 					.fetchPoliticalPartiesDetailsByPartyNames("BJP", "INC",
-							"TRS");
+							"AAP");
 			if (list != null || list.size() >= 1) {
 				list.forEach(System.out::println);
 			} else {
@@ -43,10 +45,11 @@ public class App {
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
+
 		System.out.println("==============================");
 		try {
 			System.out.println(
-					service.modifyFlagColorsByPartyName("white color", "BJP"));
+					service.modifyFlagColorsByPartyName("white color", "INC"));
 		} catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
@@ -55,4 +58,5 @@ public class App {
 		((AbstractApplicationContext) ctx).close();
 
 	}// main
+
 }

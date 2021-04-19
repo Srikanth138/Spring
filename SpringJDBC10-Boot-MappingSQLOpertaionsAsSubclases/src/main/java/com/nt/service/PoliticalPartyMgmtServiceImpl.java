@@ -30,6 +30,7 @@ public class PoliticalPartyMgmtServiceImpl
 				partyName1, partyName2, partyName3);
 		return list;
 	}
+
 	@Override
 	public String modifyFlagColorsByPartyName(String newColors,
 			String partyName) {

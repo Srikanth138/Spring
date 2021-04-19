@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.object.MappingSqlQuery;
+import org.springframework.jdbc.object.SqlUpdate;
 import org.springframework.stereotype.Repository;
 
 import com.nt.model.PoliticalParty;
@@ -18,14 +19,17 @@ import com.nt.model.PoliticalParty;
 public class PoliticalPartyDAOImpl implements IPoliticalPartyDAO {
 	private static final String GET_PARTY_DETAILS_BY_ID = "SELECT PARTYID,PARTYNAME,FLAGCOLORS,PARTYSYMBOL FROM POLITICALPARTY  WHERE PARTYID=?";
 	private static final String GET_PARTY_DETAILS_BY_NAMES = "SELECT PARTYID,PARTYNAME,FLAGCOLORS,PARTYSYMBOL FROM POLITICALPARTY  WHERE PARTYNAME IN(?,?,?)";
-
+	private static final String UPDATE_FLAGCOLORS_BY_PARTYNAME = "UPDATE POLITICALPARTY SET FLAGCOLORS=? WHERE PARTYNAME=?";
 	private PoliticalPartySelector1 selector1;
 	private PoliticalPartySelector2 selector2;
+	private PoliticalPartyUpdator1 updator1;
 
 	@Autowired
 	public PoliticalPartyDAOImpl(DataSource ds) {
 		selector1 = new PoliticalPartySelector1(ds, GET_PARTY_DETAILS_BY_ID);
 		selector2 = new PoliticalPartySelector2(ds, GET_PARTY_DETAILS_BY_NAMES);
+		updator1 = new PoliticalPartyUpdator1(ds,
+				UPDATE_FLAGCOLORS_BY_PARTYNAME);
 	}
 
 	@Override
@@ -40,6 +44,12 @@ public class PoliticalPartyDAOImpl implements IPoliticalPartyDAO {
 		List<PoliticalParty> list = selector2.execute(partyName1, partyName2,
 				partyName3);
 		return list;
+	}
+	@Override
+	public int updateFlagColorsByPartyName(String partyName,
+			String flagColors) {
+		int count = updator1.update(flagColors, partyName);
+		return count;
 	}
 
 	// ========================================================================
@@ -94,4 +104,15 @@ public class PoliticalPartyDAOImpl implements IPoliticalPartyDAO {
 			return party;
 		}
 	}
+	// inner class cum sub class1 (for non-select operation)
+	private static class PoliticalPartyUpdator1 extends SqlUpdate {
+
+		public PoliticalPartyUpdator1(DataSource ds, String query) {
+			super(ds, query);
+			super.declareParameter(new SqlParameter(Types.VARCHAR));
+			super.declareParameter(new SqlParameter(Types.VARCHAR));
+			super.compile();
+		}
+
+	}// inner class
 }

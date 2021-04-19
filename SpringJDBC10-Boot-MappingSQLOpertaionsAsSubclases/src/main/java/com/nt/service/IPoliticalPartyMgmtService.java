@@ -10,5 +10,4 @@ public interface IPoliticalPartyMgmtService {
 			String partyName1, String patyName2, String partyName3);
 	public String modifyFlagColorsByPartyName(String newColors,
 			String partyName);
-
 }

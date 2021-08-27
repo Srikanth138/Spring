@@ -7,6 +7,7 @@
   
   <bean id="emp" class="com.nt.main.Employee">
   
+  <!--  -->
   <constructor-arg value="10" type="int"/> <!-- type="primitive type -->
   <constructor-arg value="srikanth"/>  <!-- String -->
   

@@ -1,3 +1,4 @@
+local.url: http://localhost:8180/show/
 my:
   greeting: Hello World
   list:

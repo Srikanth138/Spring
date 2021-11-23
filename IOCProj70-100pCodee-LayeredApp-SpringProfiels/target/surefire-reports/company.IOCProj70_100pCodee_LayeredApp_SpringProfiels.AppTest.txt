@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: company.IOCProj70_100pCodee_LayeredApp_SpringProfiels.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in company.IOCProj70_100pCodee_LayeredApp_SpringProfiels.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s - in company.IOCProj70_100pCodee_LayeredApp_SpringProfiels.AppTest

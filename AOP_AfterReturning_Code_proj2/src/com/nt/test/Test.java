@@ -18,6 +18,7 @@ public class Test {
 		System.out.println("----------------------------------------");
 		a.m1();
 		
+		
 		((AbstractApplicationContext) context).close();
 
 	}

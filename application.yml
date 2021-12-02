@@ -1,9 +1,0 @@
-local.url: http://localhost:8180/show/
-my:
-  greeting: Hello World
-  list:
-    values: one, Two, Three
-db:
-  connection: connection-string-here
-  host: 27.0.0.1
-  port: 8800

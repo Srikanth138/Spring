@@ -6,21 +6,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-<aop:aspectj-autoproxy/>
+	<aop:aspectj-autoproxy />
+	<bean id="bb" class="com.nt.bean.Business" p:speed="125" />
+	<bean id="myAspect" class="com.nt.bean.Aspect" />
 
-<bean id="bb" class="com.nt.bean.Business" p:speed="125"/>
-
-<bean id="myAspect" class="com.nt.bean.Aspect"/>
-
-<aop:config>
-<aop:pointcut expression="execution(int com.nt.bean.Business.*(..))" id="point"/>
-
-<aop:aspect ref="myAspect" id="my1">
-
-<aop:after method="advice" pointcut-ref="point"/>
-</aop:aspect>
-
-
-</aop:config>
+	<aop:config>
+		<aop:pointcut expression="execution(int com.nt.bean.Business.*(..))" id="point" />
+		<aop:aspect ref="myAspect" id="my1">
+			<aop:after method="advice" pointcut-ref="point" />
+		</aop:aspect>
+	</aop:config>
 
 </beans>

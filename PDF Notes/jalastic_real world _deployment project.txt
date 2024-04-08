@@ -1,0 +1,22 @@
+sripatel1-> name the domail
+gmail:- sripatel83@gmail.com
+password:-old ped
+
+node52651-sripatel1.in1.cloudjiffy.net
+=====================================================
+step 1:- serch https://jelastic.com/public-cloud-registration/
+		https://app.cloudjiffy.co/  
+step 2:-services-> select java Hosting.
+step 3:- click on for ->GET STARTED FOR FREE. & enter valid Emil. & click the Arrow mark.
+step 4:- select PUBLIC CLOUD.
+step 5:- SigUp/create account->
+	gmail:- sripatel83@gmail.com
+	password:- 986673
+step 6:-select cloudjiffy
+and select Deployment -> select symbole -> select the .war file location
+
+
+==================================
+login:-
+diadem
+https://app.cloudjiffy.co/

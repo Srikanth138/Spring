@@ -1,0 +1,89 @@
+java Software & HArdware Requirement's:-
+--------------------------------------
+
+RAM: 2GB
+Processor: Intel Core2 Duo or higher
+Operating System: 32 or 64 bit OS with JDK installed on it
+------------------------------------------------------------
+JDBC:-
+------
+Learning Objectives: In this module, you will learn SQL, Architecture of JDBC, Different drivers of JDBC and to write code in JDBC to communicate with Database. 
+
+Topics:
+Introduction to SQL: Connect, Insert, Update, Delete, Select
+Introduction to JDBC and Architecture of JDBC
+Types of Drivers: Type 1/2/3/4 drivers
+Insert/Update/Delete/Select Operations using JDBC
+Batch Processing Transaction
+Management: Commit and Rollback(TCL)
+----------------------------------------------------------
+Servlet's:-
+----------
+Learning Objectives: In this module, you will learn Web Technologies and developing applications using Servlet. 
+
+Topics:
+Introduction to Web Technologies
+Type of Servlets: Generic(service) & HttpServlet(doPost/doGet)
+Request Dispatchers: Forward and Include
+4 types of Session Tracking and Filters
+----------------------------------------------------------
+JSP:-
+---
+Learning Objectives: In this module, you will learn how to develop code with JSP. 
+
+Topics:
+Introduction to JSP
+Architecture of JSP
+Scripting tags (Scripts<% %>, declarative<%! %>, expression<%= %>)
+Implicit objects
+JSP Directives(@ page, taglib,include)
+JSP Action(<jsp:forward />,<jsp:include=".jsp" />, <jsp:userBens />,<jsp:setProperies name="",value="" />,<jsp:getProperies name="",value="" />
+
+ExprestionLanguage EL:- ${5+6}
+.tld(doStart()->start, doStop()-> stop)
+JSTL(jsp Standerd tag libery) -> core,function,format, xml, sql
+=======================================================================
+Frame Work's:-
+-------------
+
+Hibernate:-
+-----------
+Learning Objectives: In this module, you will learn about hibernate framework and how to interact with the database using hibernate. You will also learn to perform various operations on database like Insert, Update, Delete and Select Operations. 
+
+Topics:
+Introduction to Hibernate
+Architecture of Hibernate
+Database Operations: Insert/Update/Delete/Select
+Inheritance
+Collections
+HQL and Restrictions
+Caching in Hibernate
+
+=================================================================================
+Spring:-
+-------
+Learning Objectives: In this module, you will learn Introduction to spring framework and writing code with spring framework components like Dependency Injection and Auto Wiring. 
+
+Topics:
+Introduction to Spring Framework
+Architecture
+Display a Sample Message
+IoC Containers:- 1.ApplicationContext ctx=new ClassPathXmlApplicationContext("com/nt/applicationContext.xml"); & 2.BeanFactory
+Bean Definition :- ctx.getBean("id",object.class);
+Bean Scopes:- singleton,prototype,request,session
+Bean Post Processors
+Dependency Injection :-Setter,constructor. =>1.primitive & String 2.collection, 3.Object
+Auto-Wiring :-1.ByName, 2.ByType, 3.constructor, 4.auto, 5.No
+-------------------------------------------------
+Spring, Ajax and Design Patterns:-
+-------------------------------
+Learning Objectives: In this module, you will learn advanced concepts of Spring Framework like AOP, Transaction Management Operations Commit and Rollback operations on a database. Interacting with a server using Ajax framework and Java EE design patterns. 
+
+Topics:
+Aspect Oriented Programming (AOP) :- 1.Aspect(class) 2.Advice(method){Before,After,AfterRetuning,AfterTrowing,Around} 3.joinPoin(combine the of methods(Target and Advice)) 4.poinCut(Exprestion) 5.Target( cross cut) 6.Proxy(main ouput /ouput main class)
+Integrating Spring framework with Hibernate
+Transaction Management
+Ajax Framework and Design Patterns: DAO, DTO, MVC
+Intercepting filters
+Front Controller
+Business Delegate

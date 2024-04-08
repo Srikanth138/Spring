@@ -1,0 +1,51 @@
+mongo db install:- and start the mongo.exe/application and set the  path of location to the This PC Environment.
+step 1:- open cmd -> type  >mongo
+step 2:- Open MongoDB Shell using mongo.exe file from any command promt
+	>show dbs
+step 3:-TO Create new Logical DB
+	>use sri
+step 4:-To know current logical DB
+	>db
+	sri
+
+step 5:-TO Create with one document.
+	>db.customer.insertOne({cno:101,cname:"raja",cadd:"hyd"}) =>use enter key
+
+step 6:-To find docs of a collection with condition
+	>db.customer.find({cadd:"hyd"}).pretty() =>use Enter Key
+
+step 7:- to delete mongodb document
+	>db.customer.remove({cadd:"hyd"}) =>use Enter Key
+
+step 8:-To remove collections
+	>db.customer.drop()
+	true
+ 
+step 9:-To list all  collections
+	>show collections
+
+step 10:-To Switch to other logical DB
+	>use CollectionDB
+
+
+
+===================================
+Spring Data provides two approaches to perfrom CURD Opertions and Other operations on MongoDB
+a) Using MongoRepository(more Recomanded)
+b) Using MongoTemplate
+
+Working MongoRepository
+----------------------
+Repository(I)
+  ^
+  |
+CurdRepository(I)
+  ^
+  |
+PagingAndSortingRepository(I)
+  ^
+  |
+MongoRepository(I)
+
+
+	

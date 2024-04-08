@@ -1,0 +1,9 @@
+Step 1: install Angular -> npm install -g @angular/cli
+Step 2: ng new FolderName/projectName
+Step 3: open the Folder cd FolderName
+ctrl / comment
+aline->ctrl+a, ctrl+k+f
+
+ngModel-> we need to use these first import the "FormsModule" in app.mouler.ts file in import section.
+
+package.json add-> any dependency

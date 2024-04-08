@@ -1,0 +1,11 @@
+1.servlet life cycle 
+2.context & config
+3.How many object create at a time -> only one first ruquest sending time request object create
+4.What is the maximum size of cookie?
+40 KB
+4 bytes
+4 KB
+4 MB
+None of these
+Correct Option: 4KB(for each cookie)
+-> https://interviewmania.com/discussion/41755-java-programming-networking

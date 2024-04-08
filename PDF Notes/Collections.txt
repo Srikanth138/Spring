@@ -1,0 +1,300 @@
+1>Arrays are fixed in size :one array is create the size of that array can't increase OR decrease.
+2>Arrays are homegenious: with in array we can store Similar type data elements or objects.
+3>No predefine methods :arraydoes not provide any methods for mainpulation.
+4>there is not underlaying "data structer".
+
+ADVANTAGES of COllections:
+1>collections are Dynamic insize.
+2>collections are 'hetrogenious'. <With out Generics>
+3>collections provide predefined methods for manipulating data OR objects.
+4>every collection uses one "data structure" for organizing data OR objects.
+->collections are containers,which are used to store data/objects.
+->grouping individual objects and representing as one object/collection.
+->collection framework is introduced in 'java1.2 version'.
+->collection framework is well organized set of "classes and intefaces".
+->collection framework contais
+**interface implementations classes.
+->uses interface we can develop new collections.
+->this collection framework is redesigned in java 5.0 by adding generics features from java5.0 on words 'collections' are called "generic collections".
+->this colectiond framework is redesigned in java8.0 by adding features like functional interfaces,lambdas,methods references,default methods and static methods in interfaces.
+
+**1)Collection(interface)[9]:-Iterable(main) 1>collection 2>List 3>Set 4>Sorted-set 5>Navigable-set 6>Queue 7>Map 8>Sorted-Map 9>Navigable-Map
+**2)Collections(classes):- 1>ArrayList 2>Vector 3>Stack 4>LinkedList 5>HashSet 6>TreeSet 7>LinkedHashSet 8>HashMap 9>TreeMap 10>HashTable 11>properties  
+1>List 2>Set 3>Queue 4>Map
+**collection FrameWorks:-
+1>List 2>Set 3>Queue
+--------------------------------------
+1>List:- is an Index based collection,where reading and writing of object are done using index.
+>list allows duplicate elements OR objects.
+>List is order collection, where insertion order is preserved.
+>if you want to store individual objects,where insertion order preserved and duplicates are allowed use list.
+1)ArrayList
+2)vector 
+	->Stack
+3)LinkedList
+Note:-Collections does not allows primitive types.
+->It allows objects.
+1)ArrayList:-is a list
+-----------------------------------------
+*forEach():-
+>foreach method is introduced in java 8.0version.
+>it is a method of iterable. itersble is a root interface for all collections.
+>forEach method receive one lambda function/expression.
+>this lambda is an implementation of consumer functional interface.
+>consumer is a predefine function interface. this interface is having one abstract method called accept.
+>forEach method each time it real element/object from collection.
+>after reading each element from collection what operation has to be done is represent as lambda expression/function.
+---------------------------------------------------------------------
+***How many ways to read Objects from collections?
+1>using getter method
+2>for loop
+3>enhanced for loop/forEach -> ex:-for(datatype ref_var : var);
+4>forEach method() -> ref.forEach(arg/param)->{sysout(arg/param);}
+5>Iterator-> Iterator itr=ref.iterator(); while(itr.hasNext()) {sysout(itr.next());}
+6>ListIterator
+7>Enumeration
+8>Streams(java 8.0)
+---------------------------------------------------------
+5>Iterator:- is an interface and implemented with in each collection type as a inner class.
+>iterator allows to read elements in sequance order.while iterating it allows to remove objects. 
+this will provide 3methods
+>next()==>read next element from collection
+>hasNext()==>this verify any more elements to read 
+>remove()==>the elements return by next method can be removed using this method.
+EX:-Iterator itr=ref.iterator(); while(itr.hasNext()) {sysout(itr.next());}
+=============================================================================
+>ListIterator:-is an interface implemented with in collections class as member class. it is "bydirectional" cursor.
+it allows to read objects in "forward and back word" direction.
+it is updated cursor.it allows to add, modify and remove object from collection while iteration.
+next()->read next object.
+previous->read previous object.
+hasNext()->return true if next object is exists.
+hasPrevious()-> return true if previous object is exists.
+add()->add object
+set()->modify object
+remove()->remove object return by next or previous.
+
+ListItrator :- ByDirection (forword and backword direction)
+
+ListIterator<> itr=list.listIterator();
+
+//forward direction
+while(itr.hasNext()){
+	sysout(itr.next());
+}
+
+
+//Backward direction
+while(itr.hasPrevious()){
+sysout(itr.previous());
+}
+-----------------------------------------------------------------
+2>Vector:-is a list
+>vector methods are Synhronized.
+>vector is thread safe.
+>vector provide method to manage capacity.
+>vector is introduced in java 1.0version.
+>vector is not efficient in multithread environment becoz one thread should wait for another thread.
+Constructor:-
+*>vector()
+constructs an empty vector so that it's internal data array has size 10 and it's standard capacity increment is zero.
+*>vector(int initialcapacity):- equals zero.
+*>vector(int initialcapacity, int capacity increment)
+*default capacity is (old-capacity*2).
+=====================================================
+***3>Stack():-Stack is a subtype vector.
+ * stack is a list,which follows LIFO(LastInFirstOut).
+ * the element inserted last is removed first.
+ * the stack is introduced in java1.0.
+ * stack is providing the following operations
+ * 1>push():- adding element into stack.
+ * 2>pop():- removing elements from stack.
+ * 3>peek()-> overflow or not.
+ * 4>display()
+ * 5>exit()
+===============================================================
+***4>LinkedList():- is a collection nodes.
+*each node in linked list Arrdess of previous node,next node and also address of object.
+*LL is more efficient in inserting and deleting operations.
+*LL is allows to read object in Sequance order.
+*LL is not efficient in reading.
+class LL{
+adress of previous node;
+data;
+adress of next node;
+}
+add();
+addFirst();
+addLast();
+remove();
+removeFirst();
+removeLast();
+=========================================================
+**ArrayList 			and 			LinkedList:-
+1.internally uses a dynamic array		1.internally uses a doubly linked list to store the elements
+to store the elements.
+2. slow(removing adding is slow)		2.fast(addFirst,addLast)
+3.less memory compare to LinkedList		3.more Memory.
+4.act as a list only because it implements	4.act as a List and Queue both because it implements list and Deque interfaces.
+List only.
+5.better for storing and accessing data.	5.better for manipulating data.
+
+===============================================================================================================
+
+
+
+//Java CopyOnWriteArrayList is a thread-safe variant of ArrayList in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.
+
+**LinkedList:-
+The important points about Java LinkedList are:
+- Java LinkedList class can contain duplicate elements.
+- Java LinkedList class maintains insertion order.
+- In Java LinkedList class, manipulation is fast because no shifting needs to have occurred.
+- The LinkedList class implements Queue and Deque interfaces. Therefore, It can also be used as a Queue, Deque or Stack.
+- Java LinkedList is not thread-safe. You must explicitly synchronize concurrent modifications to the LinkedList in a multi-threaded environment.
+
+
+**MAP :-
+HashMap :-
+=======
+put();
+getKey(),getValue();
+
+1. Iterate through a HashMap EntrySet using Iterator
+
+Map<Integer,String> map=new HashMap<>();
+Iterator<Entry<Integer, String>> itr=map.entrySet().iterator();
+while(itr.hasNext()){
+	//sysout(itr.next());
+Entry<Integer, String> entry=itr.next();
+sysout(entry.getKey());sysout(entry.getValue());
+}
+
+
+2. Iterate through HashMap KeySet using Iterator
+3. Iterate HashMap using For-each Loop
+4. Iterating through a HashMap using Lambda Expressions
+map.forEach(key,value)->{sysout(key) ;sysout(value));});
+
+5. Loop through a HashMap using Stream API
+map.entrySet().stream().forEach((entry)->{ sysout(entry.geyKey()+" "+entry.getvalue()); });
+
+**copy a List to another List 
+1. Using Constructor:-
+List a1=new ArrayList();
+a.add("aa");
+a.add("ab");
+List a2=new ArrayList(a); //Using Constructor
+sysout(a2);
+
+2. Using addAll() method:-
+List a1=new ArrayList();
+a.add("aa");
+a.add("ab");
+List a2=new ArrayList();
+a2.addAll(a1); //addAll()
+sysout(a2);
+
+3. Using Collections.copy() method :-
+List a1=new ArrayList();
+a.add("aa");
+a.add("ab");
+List a2=new ArrayList();
+a2.add("bb");
+a2.add("ba");
+Collections.copy(a2,a1); //static method in collection's
+Collections.sort(a2); //Sorting the Order assending
+sysout(a2);
+
+4. Using Java 8 stream:-
+List<String> copy=a1.stream().collect(Collectors.toList());
+sysout(copy);
+
+5. Using Java 10
+java.util.List<String> copy=List.copyOf(a1);
+sysout(copy);
+
+** different ways to iterate over a HashSet:-
+Set<String> cc=new HashSet<String>();
+
+- Enhanced for loop
+for(String c:cc){sysout(c);}
+
+- Basic loop with an iterator
+- While loop with an iterator
+- JDK 8 forEach() method with lambda
+- JDK 8 streaming + forEach() + lambda expression
+
+cc.stream.filter(c -> !"condition".equals(c)).forEach(c->sysout(c));//only once use the filter Stream not reuse give  error.
+
+
+**immutable ArrayList, HashSet, and HashMap with coding examples.
+->ArrayList - Collectons.unmodifiableList() and List.of() method(java 9)***
+
+List a1=new ArrayList();
+a.add("aa");
+a.add("ab");
+a=Collectons.unmodifiableList(a);
+a.add("dghh"); //give a error -> Unmodify the list
+sysout(a);
+
+List<String> a=List.of("aa","ab","ba");//overloaded method can't modify the value's
+a.add("abas"); //give a error -> "unsupportedOperationException"
+sysout(a);
+
+->Hashset - Collections.unmodifiableSet() and Set.of() method(java 9)
+a=Collectons.unmodifiableSet(a);
+Set<String> a=Set.of("aa","ab","ba");//overloaded method can't modify the value's
+a.add("abas"); //give a error -> "unsupportedOperationException"
+sysout(a);
+
+->HashMap - Collections.unmodifiableMap(numberMapping) and Map.ofEntries() method(java 9)
+Map<String,String> map=Map.ofEntries(Map.entry("1","banana"),Map.entry("2",Mango"));
+Sysout(map);
+
+Use Case:
+Whether to use an unmodifiable collection or a modifiable collection depends on the data in the collection.
+
+An unmodifiable collection provides space efficiency benefits and prevents the collection from accidentally being modified, which might cause the program to work incorrectly. An unmodifiable collection is recommended for the following cases:
+1. Collections that are initialized from constants that are known when the program is written.
+2. Collections that are initialized at the beginning of a program from data that is computed or is read from something such as a configuration file.
+
+One more advantage of an immutable collection is that it is automatically thread safe. After you create a collection, you can hand it to multiple threads, and they will all see a consistent view.
+========================
+HashMap 			and 		 HashTable:-
+1.is Non-Synchronized. 				1.Synchronized. it is thread-safe and shared with many treads.
+it is Not-thrread safe and 
+can't be shared betWeen threads without 
+proper synchronization code.
+
+2.Allows one null key and multiple null values. 2.doesn't allow null key or values
+3.new class introduced in JDK 1.2 		3.Legacy class
+4.fast						4.slow
+5.doesn't allow dublicte key's			5.doesn't allow dublicate key's
+6.traversed bt Iterator.			6.traversed by Enumerator 
+
+6.EX:-
+Hashtable ht=new Hashtable();
+ht.put(1,"sri");
+ht.put(2,"patel");
+Enumeration e=ht.elements();
+ while(e.hasMoreElements()){
+ sysout(e.nextElement());
+}	
+
+**how to sort List (ArrayList) in ascending and descending order using Java Lambda expressions.
+- Sort List of integers using Collections.sort() method	
+->Collections.sort(list); //assending order
+->Collections.reverse(list); // Descending order
+
+-> class a implements Compareto<Emp>{
+	public int compare(Emp e1, Emp e2){
+		return (int)(e1.getSalary() -e2.getSalary());
+	}
+       }
+
+
+
+
+
+

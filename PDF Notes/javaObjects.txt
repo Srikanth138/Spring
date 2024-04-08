@@ -1,0 +1,124 @@
+programing components:
+1.varibles
+2.methods
+3.blocks
+4.constructors
+5.classes
+6.interfaces
+7.Abstract classes
+
+programing concepts:
+1.Object Oriented Programming
+2.Exception Handling Process
+3.Multi-threading process
+4.java collection Framework
+5.GUI programing
+
+Object Oriented programming features:
+
+1.class
+2.Object
+3.Abstract
+4.Encaptulation
+5.polymorphism
+6.Inheritance
+------------------------------------------
+objects in corejava:
+1.User define class Objects
+EX:- className cl=new ClassName();
+2.Wrapper class objects
+ a>Byte object
+ b>Short object
+ c>Integer object
+ d>Long object
+ e>Float object
+ f>Double object
+ g>Character object
+ h>Boolean object
+3.String Objects
+  a>String Class 
+  b>StringBuffer Class
+  c>StringBuilder class
+4.Array object
+  a>User define class Array
+  b>Wraper class array
+  c>String Array
+  d>Object Array
+5.Collection<E> objects
+  a>Set<E> objects
+	i)HashSet<E> object
+	ii)LinkedHashSet<E> object
+	iii)TreeSet<E> object
+  b>List<E> objects
+	i)ArrayList<E> object
+	ii)LinkedList<E> object
+	iii)vector<E> object
+	    ->Stack<E> object
+  c>Queue<E> objects
+	i)priorityQueue<E> object
+	   ->Deque<E> objects
+	ii)ArrayDeque<E> objects
+6>Map<k,v> objects:-
+  a)HashMAp<k,v>
+  b)LinkedHashMAp<k,v>
+  c)TreeMap<k,v>
+  d)HashTable<k,v>
+7>Enum<E> object
+_______________________________________30 OBJECTS
+8>String TOkenizer Object
+9>String joiner
+
+==============================================
+JDBC Objects:
+ 1.Connection object
+ 2.Statement object
+ 3.PreparedStatement object
+ 4.CallableStatement object
+ 5.Scrollable ResultSet object
+ 6.Non-Scrollable ResultSet object
+ 7.DatabaseMetaData object
+ 8.ParameterMetaData object
+ 9.ResultSetMetaData object
+ 10.RowSet Object
+  ------------------
+ 11.Connection pooling object(JNDI)
+---------------------------------------------------------
+Servlet Objectas:
+ 1.ServletContext object
+ 2.ServletConfig object
+ 3.ServletRequest object/HttpServletRequest object
+ 4.ServletResponse object/HttpServletResponse object
+ 5.PrintWriter object
+ 6.HttpSession object
+ 7.Cookie object
+ 8.DAO Layer object
+ 9.JavaBean object
+ 10.JCF object (java collection framework)
+-------------------------------
+JSP objects:
+ALL jsp object are predefine object's.
+ 1.application   -> context
+ 2.config
+ 3.request
+ 4.response	  
+ 5.out		  -> printWriter to display the content on the web browser.
+ 6.session	  -> When the user login and logout time.
+ 7.exception
+ 8.page          -><% @import stmt %>  
+ 9.pageContext
+---------------------------
+EL-JSTL objects:
+ 1.pageScope
+ 2.sessiomScope
+ 3.requestScope
+ 4.applictionScope
+ 5.param
+ 6.paramValues
+ 7.cookie
+ 8.pageContext
+ 9.header
+ 10.headerValues
+ 11.initParam
+-----------------------------
+Note:
+ =>IN realtime JSPEL(JSP Expresion Language)replaces with SpEL(Spring Expresion Language)

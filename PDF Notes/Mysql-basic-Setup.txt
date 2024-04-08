@@ -1,0 +1,23 @@
+MYSQL CREATION:-
+open MYSQL cmd:- enter the password
+ 
+step 1:-mysql> create database srikanth;
+Query OK, 1 row affected (0.01 sec)
+
+STEP 2:-mysql> use srikanth;
+Database changed
+
+STEP 3:-mysql>create table...etc
+
+STEP 4: download mysql .jar
+
+
+Class.forName("com.mysql.cj.jdbc.Driver");//loading the dirivers
+	(OR)
+Class.forName("com.mysql.jdbc.Driver");//loading the dirivers
+
+Connection con=DriverManager.getConnection("jdbc:mysql:///srikanth","root","root");
+		(OR) jdbc:mysql://localhost:3306/?user=root
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srikanth","root","root");
+------------------------
+IMP:-Add .jar files in "BulidPath" and "Projec/WebContent/WEB-INF/lib/mysql-connector-java-8.0.21.jar"

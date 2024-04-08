@@ -1,0 +1,1044 @@
+=>show the all the tables in this user:-
+SQL>select * from tab;
+
+=>pagesize N:-To display number of row's in a page.
+SQL>set pagesize 100
+
+=>lines N:-To display number of character's in a single line.
+SQL>set lines 100
+
+=> To clear a screen:-
+SQL> cl scr; (OR) (shift+delete)
+
+=>To exist from oracle db:-(DISCONNECT)
+SQL>exit;
+---------------------------------------------------------------------
+DDL:-
+----
+1)CREATE:-create table test(id int,name varchar2(10));
+
+2)Alter:-
+a)alter-modify:-alter table test modify name char(10);
+		Table altered.
+b)alter-add:-alter table test add addres varchar2(10);
+		Table altered.
+c)alter-rename:-alter table test rename column addres to stuaddres;
+		Table altered.
+d)alter-drop:-alter table test drop column stuaddres;
+		Table altered.
+
+3)Rename:-rename test to test1;
+		Table renamed.
+
+4)Truncate:-truncate table test1;
+		Table truncated.
+all row's are deleted but syntax is there.
+
+5)Drop:- drop table test1;
+		Table dropped.
+deleted table data and syntax also.
+
+NEW FEATER,S IN ORACLE 10G ENTER PRICE EDDITION
+1.RECYCLEBIN
+2.FLASHBACK
+3.PURGE
+
+1.RECYCLEBIN:-DESC RECYCLEBIN;
+SQL> SELECT OBJECT_NAME,ORIGINAL_NAME FROM RECYCLEBIN;
+
+OBJECT_NAME                    ORIGINAL_NAME
+------------------------------ --------------------------------
+BIN$4P+OUM3iQUGNJsvBc+aqmw==$0 TEST1
+
+2.FLASHBACK:-FLASHBACK table test1 to before drop;
+		Flashback complete.
+
+3.PURGE:-
+I)IT IS USED TO DROPED TABLES FROM RECYCLEBIN PERMENENTLY.
+EX:-PURGE TABLE TEST1;
+	Table purged.
+II)DROPING A TABLE FROM DATA BASE PERMENETLY.
+EX:- DROP TABLE TEST PURGE;
+	Table dropped.
+============================================================
+DML:-
+-----
+1)INSERT:-insert into test values(10,'sri');
+		1 row created.
+insert multiple values:-
+insert into test values(&id,'&name');
+
+insert FIXED values:- &&
+insert into test values(&&id,'&name');
+
+2)UPDATE:-update test set id=13 where name='d';
+		1 row updated.
+
+3)DELETE:-delete specific row
+delete from test where name='e';
+		(OR)
+delete test where name='e';
+	1 row deleted.
+all rows from atable at a time.
+delete from test;
+4 rows deleted.
+============================================================
+DQL:-retrival data from a table
+-----
+select *from test;
+============================================================
+*ALIAS NAME:-NIK NAME/DUBLICATE NAME
+i)column level alias
+select id a from test;
+        A
+----------
+        14
+        14
+ii)table level alias
+SQL> select id a from test t;
+         A
+----------
+        14
+        14
+==============================================================
+*OPERATOR'S:-
+-------------
+i)ASSIGNMENT OPERATOR(=):-
+SQL> SELECT *FROM TEST WHERE ID=14;
+
+ii)ARITHMETIC OPERATORS:-(+,-,*,%,/):-
+SQL> SELECT NAME+10 FROM TEST;
+
+iii)RELATIONAL:-(<,>,<=,>=,!=,!<,!>):-
+SQL> SELECT * FROM TEST WHERE ID<15;
+
+IV)LOGICAL OPERATOR(AND,OR, NOT):-
+AND:-SQL> SELECT *FROM EMP WHERE JOB='SALESMAN' AND ENAME='TURNER';
+
+OR:-SQL> SELECT *FROM EMP WHERE EMPNO=7369 OR EMPNO=7566 OR EMPNO=7788;
+
+NOT:-SELECT *FROM EMP WHERE NOT JOB='CLERK' AND NOT JOB='ANALYST';
+
+V)SPECIAL OPERATORS:-
+IN:- SELECT *FROM EMP WHERE EMPNO IN(7566,7788,7900);
+
+NOTIN:-SELECT *FROM EMP WHERE EMPNO NOT IN(7566,7788,7900);
+
+BETWEEN:-SELECT *FROM EMP WHERE SAL BETWEEN 1500 AND 3000;
+
+NOT BETWEEN:-SELECT *FROM EMP WHERE SAL NOT BETWEEN 1500 AND 3000;
+
+IS NULL:-SELECT *FROM EMP WHERE COMM IS NULL;
+
+WORKING WHIT NULL:- ANY NULL + VALUE= NULL
+SQL> SELECT ENAME,JOB,SAL,COMM,SAL+COMM FROM EMP WHERE ENAME='SMITH';
+
+NVL(EXP1,EXP2):-IS PREDEFIND VALUE
+NVL EXP1 IS NULL IT RETURNS EXP2 VALUE OTHER WISE IT RETURNS EXP1 VALUE.
+EX:-SELECT NVL(NULL,100)FROM DUAL;
+NVL(NULL,100)
+-------------
+          100
+SQL> SELECT NVL(50,100)FROM DUAL;
+NVL(50,100)
+-----------
+         50
+	
+* NVL2(EXP1,EXP2,EXP3):-
+SQL> SELECT NVL2(NULL,50,100)FROM DUAL;
+NVL2(NULL,50,100)
+-----------------
+              100
+SQL> SELECT NVL2(20,50,100)FROM DUAL;
+NVL2(20,50,100)
+---------------
+             50
+SQL> SELECT NVL2(20,NULL,100)FROM DUAL;
+NVL2(20,NULL,100)
+-----------------
+SQL> SELECT NVL2(NULL,NULL,50)FROM DUAL;
+NVL2(NULL,NULL,50)
+------------------
+                50
+SQL> SELECT NVL2(20,NULL,NULL)FROM DUAL;
+N
+
+LIKE:-THE GROUP OF CHARECTOR WE USE.
+SPECIAL STRING CHARACTOR PATTERN(SELECT,UPDATE,DELETE)
+
+'S%'START WITH "S" CHARACTOR  DISPLAY 
+SQL> SELECT *FROM EMP WHERE ENAME LIKE 'S%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+
+"%S%" WHO'S NAME CONTAIN "S"CHARACTOR DISPLAY 
+SQL> SELECT *FROM EMP WHERE ENAME LIKE '%S%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+
+NOT LIKE:-IT RETURNS ALL VALUES EXCEPT THE SPECIAL CHARECTER.
+SQL> SELECT *FROM EMP WHERE ENAME NOT LIKE 'S%';
+12 rows selected.
+==================================
+6)SET OPERATORS:-
+RETRIV DATA FROM ONE/MORE THAN ONE TABLE
+(UNION,UNIONALL,INTERSECT & MINUS)
+UNION:-
+SQL> SELECT JOB FROM EMP WHERE DEPTNO=10 
+	UNION 
+	SELECT JOB FROM EMP WHERE DEPTNO=20;
+
+UNIONALL:-
+SQL> SELECT JOB FROM EMP WHERE DEPTNO=10 
+	UNION ALL 
+	SELECT JOB FROM EMP WHERE DEPTNO=20;
+
+INTERSECT:-
+SQL>SELECT JOB FROM EMP WHERE DEPTNO=10 
+	INTERSECT 
+	SELECT JOB FROM EMP WHERE DEPTNO=20;
+
+MINUS:-
+SQL> SELECT JOB FROM EMP WHERE DEPTNO=10 
+	MINUS 
+	SELECT JOB FROM EMP WHERE DEPTNO=20;
+=========================================================
+
+FUNCTIONS:-
+TP PERFORM A CERTAIN TASK AND IT RETURN A VALUE.
+1)PREDEFIND FUNCTION(SQL&PL/SQL)
+2)USER DEFIND FUNCTION(PL/SQL)
+
+SYSNTAX:-
+SELECT <FUNCTION NAME>(VALUE/S) FROM DUAL;
+
+DUAL:-
+IT IS A PREDEFIND TABLE.
+IT CONTAIN ONLY ONE ROW AND ONE COLUMN.
+IT IS ALSO CALLED AS DUMMY TABLE INORACLE.
+***SQL>DESC DUAL;
+
+->PREDIFIND FUNCTIONS
+1)NUMBER FUNCTION/Math functions
+2)CHARACTER/STRING FUNCTIONS
+3)DATA FUNCTIONS
+4)AGGREGATIVE/GROUPPING FUNCTION
+ 
+1)NUMBER FUNCTION (OR)Math Function:-
+SQL> SELECT ABS(-12)FROM DUAL;
+  ABS(-12)
+----------
+        12
+SQL> SELECT CEIL(9.3)FROM DUAL;
+ CEIL(9.3)
+----------
+        10
+SQL> SELECT FLOOR(9.3)FROM DUAL;
+FLOOR(9.3)
+----------
+         9
+SQL> SELECT POWER(2,3)FROM DUAL;
+POWER(2,3)
+----------
+         8
+SQL> SELECT SQRT(25)FROM DUAL;
+  SQRT(25)
+----------
+         5
+SQL> SELECT MOD(2,10)FROM DUAL;
+ MOD(2,10)
+----------
+         2
+SQL> SELECT ROUND(22.35)FROM DUAL;
+ROUND(22.35)
+------------
+          22
+STRING/CHAR:-
+
+SQL> SELECT LENGTH('HELLO')FROM DUAL;
+LENGTH('HELLO')
+---------------
+              5
+SQL> SELECT LOWER('HELLO')FROM DUAL;
+LOWER
+-----
+hello
+SQL> SELECT UPPER('hello')FROM DUAL;
+UPPER
+-----
+HELLO
+SQL> SELECT LTRIM('     hello')FROM DUAL;
+LTRIM
+-----
+hello
+SQL> SELECT LTRIM('MMMMMhello','M')FROM DUAL;
+LTRIM
+-----
+hello
+SQL> SELECT RTRIM('helloMMMM','M')FROM DUAL;
+RTRIM
+-----
+hello
+SQL> SELECT TRIM('M'FROM'MMMMMhelloMMMM')FROM DUAL;
+TRIM(
+-----
+hello
+SQL> SELECT INITCAP('hello')FROM DUAL;
+INITC
+-----
+Hello
+SQL> SELECT CONCAT('hello','MORNING')FROM DUAL;
+CONCAT('HELL
+------------
+helloMORNING
+SQL> SELECT REPLACE('hello','l','A')FROM DUAL;
+REPLA
+-----
+heAAo
+SQL> SELECT SUBSTR('hello','2','3')FROM DUAL;  
+SUB
+---
+ell
+============
+2)DATE FUNCTIONS:-
+
+SQL> SELECT SYSDATE FROM DUAL;
+SYSDATE
+---------
+15-MAY-20
+SQL> SELECT add_MONTHS('25-JAN-20',2) FROM DUAL;
+ADD_MONTH
+---------
+25-MAR-20
+SQL> SELECT MONTHS_BETWEEN('25-JAN-20','25-JAN-18') FROM DUAL;
+MONTHS_BETWEEN('25-JAN-20','25-JAN-18')
+---------------------------------------
+                                     24
+SQL> SELECT LAST_DAY('25-JAN-20') FROM DUAL;
+LAST_DAY(
+---------
+31-JAN-20
+==============
+3)AGGREGATIVE/GROUPPING FUNCTION
+SQL> SELECT SUM(SAL) FROM EMP;
+  SUM(SAL)
+----------
+     29025
+SQL> SELECT AVG(SAL) FROM EMP;
+  AVG(SAL)
+----------
+2073.21429
+SQL> SELECT MIN(SAL) FROM EMP;
+  MIN(SAL)
+----------
+       800
+
+SQL> SELECT MAX(SAL) FROM EMP;
+  MAX(SAL)
+----------
+      5000
+
+SQL>  SELECT COUNT(*) FROM EMP;
+  COUNT(*)
+----------
+        14
+SQL>  SELECT COUNT(COMM) FROM EMP;
+COUNT(COMM)
+-----------
+          4
+SQL>  SELECT COUNT(DISTINCT ENAME) FROM EMP;
+COUNT(DISTINCTENAME)
+--------------------
+                  14
+=================================================
+CLAUSES:-
+WHERE
+ORDERBY
+GROUP BY
+HAVING
+ROLL UP
+CUBE
+
+1)WHERE:-SQL>select *from emp where sal=1600;
+
+2)ORDERBY:-
+SQL> select *from emp order by sal desc;
+SQL> select *from emp order by deptno;
+SQL> select *from emp where deptno=20 order by sal;
+
+3)GROUP BY:-
+SQL> select deptno from emp group by deptno;
+SQL> select deptno,count(*) from emp group by deptno order by deptno;
+SQL> select job,count(*) from emp group by job;
+SQL> select deptno,sum(sal) sumsal,avg(sal) avgsal,min(sal) minsal,max(sal) maxsal from emp group by deptno order by deptno;
+
+4)HAVING:-
+SQL> select job,sum(sal) from emp group by job having sum(sal)>5000;
+SQL> select deptno,count(*) from emp group by deptno having count(*)<5;
+
+5)ROLL UP(&)CUBE:-THESE ARE SPECIAL CLAUSES IN DATABASE TO FINDING SUB & GRANT TOTAL AUTOMATICALY.
+IT CAN BE IMPLEMENTEDED ALONG WITH GROUP BY CLAUS.
+SQL> select job,Deptno,count(*) from emp group by rollup(job,deptno);
+6)CUBE:-
+SQL> SELECT DEPTNO,COUNT(*)FROM EMP GROUP BY CUBE(DEPTNO);
+=====================================================================
+**CREATE OLD TABLE TO NEW TABLE:-
+SQL> create table test1 as select *from dept;
+
+*IN THIS CASE WE CREATE NEW TABLE IN COPY COLUMS BUT NOT COPY OF ROW'S OLD TABLE.
+SQL> CREATE TABLE TEST1 AS SELECT *FROM DEPT WHERE 1=0;
+no rows selected
+---------------------------------------------------------------------
+HOW TO COPY DATA FROM ONE TABLE TO ANOTHER TABLE:-
+->BOTH TABLES STRUCTER SHOULD BE SAME.
+->NO.OF COLUMNS AND ORDER OF THE COLUMN SHOULD BE SAME BOTH TABLES.
+->DATATYPE OF THE COLUMN MUDT BE MATCH.
+
+SQL> INSERT INTO TEST1 SELECT *FROM DEPT;
+========================================================================
+***
+JOIN'S:-
+------- JOIN'S ARE USED TO ONLY RETRIVE THE DATA FROM MULTIPLE TABLE'S AT A TIME.
+THESE ARE TWO TYPE
+1>NON-ANSI FORMAT JOIN'S(ORACLE 8i):-
+	1.equi-join
+	2.non-equi join
+	3.self-join
+2>ANSI-FORMAT JOINS(ORACLE 9i):-
+	1.INNER-JOIN
+	2.OUTER JOIN
+		i>LEFT OUTER JOIN
+		ii>RIGHT OUTER JOIN
+		iii>FULL OUTER JOIN
+	3.CROSS JOIN/CARTESIAN JOIN
+	4.NATURALJOIN
+->WHEN WE RETRIVE DATA FROM MULTIPLE TABLE'S BASED ON "WHERE" CLAUSE CONDITION IS CALLES AS "NON-ANSI FORMAT JOIN'S".
+->WHEN WE RETRIVE DATA FROM MULTIPLE TABLE'S "ON" CLAUSES CONDITION IS CALLAED AS "ANSI FORMAT JOIN'S".
+
+1>SYNTAX FOR NON-ANSI JOIN'S:-
+SELECT *FROM<TN1>,<TN2> WHERE <JOINING CONDITION>;
+
+2>SYNTAX FOR ANSI JOIN'S:-
+SELECT *FRom <TN1><JOIN KEY><TN2>ON<JOINING CONDITION>;
+
+1.1>equi-join:-RETRIVE DATA FROM MULTIPLE TABLES BASED ON "=" OPERATER.
+--------------
+-> WHENEVER WE USED EQUI-JOIN WE SHOULD HAVE ATLEAST "ONE COMMON COLOUMN" INTABLES AND BOTH COLOUMS DATA TYPES MUST BE MATCH.
+IT ALWAYS RETRIVING AT MATCHING DATA FROM TABLES
+
+SYNTAX:-WHERE<TN1>.<COMMON COLUMN>=<TN2>.<COMMON COLUMN>
+-------
+SQL> SELECT *FROM TEST1,DEPT WHERE TEST1.DEPTNO=DEPT.DEPTNO;
+
+2.1>INNER JOIN:-
+---------------
+SYNTAX:-ON <TN1>.<COMMON COLUMN>=<TN2>.<COMMON COLUMN>;
+-------
+SQL> SELECT *FROM TEST1 INNER JOIN DEPT ON TEST1.DEPTNO=DEPT.DEPTNO;
+
+2.2>OUTER JOIN:-
+--------------
+i)LEFT OUTER JOIN:-RETRIVE MATCHING DATAFROM 'BOTH TABLES' BUT UNMATCH DATA FROM THE "LEFT-SIDE" TABLE ONLY.
+------------------
+SQL> SELECT *FROM DEPT D LEFT OUTER JOIN TEST1 T ON D.DEPTNO=T.DEPTNO;
+
+ii)RIGTH OUTER JOIN:-
+SQL> SELECT *FROM TEST1 T RIGHT OUTER JOIN DEPT D ON T.DEPTNO=D.DEPTNO;
+
+iii)FULL OUTER JOIN:-
+SQL> SELECT *FROM TEST1 T FULL OUTER JOIN DEPT D ON D.DEPTNO=T.DEPTNO;
+
+2.3)CROSS JOIN:-
+SQL> SELECT *FROM TEST1 CROSS JOIN DEPT/Test2;
+
+2.4)NATURAL JOIN:-
+SQL> SELECT *FROM TEST1 NATURAL JOIN DEPT/Test2;
+
+1.2)NON-EQUI JOIN:-
+RETRIVING DATA FROM MULTIPLE Table's based on any condition except.(and),(=)operater condition.
+In this join we can use the following operator's are <,>,<=,>=,!=,and,BetWeen....etc.
+SQL> SELECT *FROM TEST1 t, DEPT d where t.deptno>d.deptno;
+
+1.3)self-join:-
+---------------  
+->one/single table.
+->joining a table by it self.
+->self join can be implemented on a single table.
+
+SQL> select *from test1;
+SQL> select t.deptno,t.dname from test1 t,test1 t1 where t.loc=t1.loc;
+
+*HOW TO JOIN MORE THAN TWO TABLES:-
+----------------------------------
+SYNTAX FOR ANSI:- 
+SELECT *FROM <TN1><JOIN KEY><TN2> ON<JOIN CONDITION1><JOIN KEY><TN3><JOIN CONDITION2><JOIN KEY><TN4><JOIN CONDITION3>.........;
+SYNTAX FOR NON-ANSI:-
+SELECT *FROM <TN1>,<TN2>,<TN3>,<TN4>.....WHERE <JOIN CONDITION1>AND<JOIN CONDITION2>AND......;
+=============================================================================
+DATA INTEGRITY:-
+--------------- IS NOTHIONG BUT TO MANTAIN ACCURATE AND CONSISTANCY DATA IN DATABASE TABLE.
+i>declarative dataIntegrity(pre-define DI)-sql
+ii>procedural dataIntegrity(user-define DI)-pl/sql
+
+i>declarative dataIntegrity:-it can classified into 3 types
+1)entity-integrity:-unique,primary key
+2)reference integrity:-foreign key(references key)
+3)Domain integrity:-default,check,not-null
+==========================
+*constraints:-to restrict invalid data into table.
+1.unique
+2.notnull
+3.check
+4.primary key
+5.foreign key
+6.default
+Syntax:-create table <tn>(<col1><dt>[size]<constraint type>,<col2><dt>[size]<constraint type>,.......);
+----------------
+1.unique:-to restrict dublicate values but also null's into a coloumn
+Synatx:-<column name><DT>[size]unique.
+ex:-create table tast1(sno int unique,name varchar2(10) unique);
+
+2.notnull:-to restrict null's but accessing duplicates into a column
+Sysntax:-<column name><dt>[size]  not null;
+ex:-create table test2(sno int not null,name varchar2(10) not null);
+
+3.check:-check A value before accepting into a column.
+Syntax:-<column name><dt>[size]check(<condition>);
+ex:-create table test3(eid int not null, ename varchar2(10) not null,sal number(10) not null check(sal=1000),age int not null check(age between 18 and 30));
+SQL> insert into test3 values(&eid,'&ename',&sal,&age);
+
+4.primary key:-to restict dublicate values and null's.
+Ex 1:-create table test4(pcode int primary key,paname varchar2(10) primary key);
+table can have only one primary key.
+Ex 2:- create table test4(pcode int primary key,paname varchar2(10));
+insert into test4 values(&pcode,'&paname');
+
+***Composite primary key:-
+1.A primary key constant construct with multiple column's are called composite primary key.
+2.in composite primary key individual columns are accepting dublicate data but combination columns are not allowed.
+3.it can be defined after all columns defination's.(it means end of the table defination)
+Syntax:-create table <tn>(<col1><dt>[size],<col2><dt>[size],...primary key(<col1>,<col2>...));
+ex:-SQL> create table test5(no int,name varchar2(10),primary key(no,name));
+SQL> insert into test5 values(&no,'&name');
+
+5.Foreign key:-is used to establish relationship b/w tables.
+1.should have a common column in both tables and that columns datatype must be match.
+2.to establish relationship in b/w table we should take primary key one table and add it to another table should has foreigh key.after declaring foreign key.
+3.to establish relationship in two tables then those tables are having a relationship is called has parent & child relationship.
+4.primary key table is treated as parent & foreign table is treated has child.
+5.foreigh key is allowed to dublicate and null values.
+Syntax:- <column name><dt>[size] reference <parent table name>(<common column>);
+Ex:-SQL> create table dept1(deptno int primary key,name varchar2(10));
+SQL> insert into dept1 values(&deptno,'&name');
+Ex :-SQL> create table emp1(empno int,ename varchar2(20),deptno int references dept1(deptno));
+SQL> insert into emp1 values(&empno,'&ename','&deptno');
+
+6.Default:-
+sql>Alter table <tn>modify<column name>default <value>;
+SQL> alter table test1 modify sno default '101';
+============================================================
+4>TRANSACTION CONTROL LANGUAGE:-(TCL)
+
+A transaction is unit of work that is performed againest data base(OR) set of stmt's should be executed.
+->If we are inserting/updating/deleting a record from the table then they are performing a transaction on a table.
+to manage a transaction's on database table then we follow.
+the following commands are commit,rollback&savepoint.
+
+1>commit:-
+it is used to make transaction is parament. oracle database support the following two types of transaction's.
+i)Implicite-commit:-these transactions are commited by system AUTOMATICALY 
+EX:-DDL-commands.
+ii)Explicite-commit:-these transactions are commited by the user whenever it required.
+EX:-DML-commands.
+
+2>rollback:-it is used to cancel a transaction.
+->once we commit a transaction then we can't RollBack.
+
+3>Savepoint:-is used for developing /breaking a transaction into multiple units so that user will have a chance the rollback is a transaction up to a location.
+when a user create savepoint with in a transaction. then a savepoint defined special memory to which transaction should will/be rollbacK.
+*Syntax to create create a savepoint:-
+Savepoint <pointer name>;
+*Syntax to Rollback A savepoint:-
+Rollback to <save point name>;
+Ex:-
+SQL> delete from test3 where deptno=10;
+1 row deleted.
+SQL> select *from test3;
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+SQL> savepoint s1;
+Savepoint created.
+SQL> delete from test3 where deptno=20;
+1 row deleted.
+SQL> select *from test3;
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+SQL> rollback to s1;
+Rollback complete.
+SQL> select *from test3;
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+SQL> rollback;
+Rollback complete.
+SQL> select *from test3;
+==================================================================
+SubQuery/NestedQuery:-
+[subquery=outerQuery+innerQuery]
+A query inside another query is called as subquery/nestedQUERY.
+Syntax:-select *from <tn>where <condition>(select *from...(select*from....(select *from....)));
+A sub QUERY IS HAVING TWO ARE more querys are
+1>OUTER QUERY
+2>INNER QUERY
+As per the excution process of sub-process of sub-query it again classified into two categiries.
+1>non co-related sub-query:-first Inner query is executed query & latter out-query is executed. where as in co-related sub query. first outer query is executed and Latter Inner Query will execute.
+they are again classified into the following type's
+>Single row sub query
+>multiple row sub query
+>multiple column sub query.
+>in-Line view 
+
+>Single row sub query:-When a subquery returns a single value is called single row sub query.
+-> [=,<,>,<=,>=,!=]
+step 1:-Inner query
+SQL> select max(sal) from emp;
+step 2:-outer query
+SQL>select *from emp where sal=(inner query);
+*SUBQUERY=(outer+inner):-
+SQL> select *from emp where sal=(select max(sal) from emp);
+
+>multiple row sub query:-
+SQL> select *from emp where sal in(select max(sal) from emp group by job);
+
+>multiple column sub query.
+SQL> select *from emp where (job,sal)in(select job,max(sal) from emp group by job);
+ 
+>in-Line view :-
+providing select a stmt in place of table name in select query is called has inline vies.
+
+
+2>co-related sub-query:-In co-related sub query mechanism first outer query is excuted and latter inner query will executed it means that in co-related sub query is always depends on the result of outer query.
+SQL> select *from test1 t1 where 0=(select count(distinct sal)from test1 t2 where t2.sal>t1.sal);
+====================================================================
+*PSEUDO COLUMNS:-oracle support the following pseudo which are behave to table columns.
+1>ROWID
+2>ROWNUM
+1>ROWID:-whenever we insert a row into a table internaly oracle server is creating a uniquw id for each row wise in the table automaticaly.
+these row id's are saved in database perminantly.
+SQL>select rowid,ename from emp;
+ROWID              ENAME
+------------------ ----------
+AAAR3sAAEAAAACXAAA SMITH
+AAAR3sAAEAAAACXAAB ALLEN
+AAAR3sAAEAAAACXAAC WARD
+AAAR3sAAEAAAACXAAD JONES........................
+
+SQL> select rowid, ename,deptno from emp where deptno=10;
+ROWID              ENAME          DEPTNO
+------------------ ---------- ----------
+AAAR3sAAEAAAACXAAG CLARK              10
+AAAR3sAAEAAAACXAAI KING               10
+AAAR3sAAEAAAACXAAN MILLER             10
+SQL> select min(rowid) from emp;
+SQL> select max(rowid) from emp;
+------------------------------------------
+2>ROWNUM:-to generating sequance no's to each row wise(or) to each group of row's wise in a table automaticaly.
+->these no's are not saved in database(temporarly stored).
+SQL> select rownum,ename from emp;
+SQL> select rownum,ename,deptno from emp where deptno=10;
+SQL> select ename,sal from emp  order by sal desc;
+==================================================
+4>IN-Line view:-provinding select a stmt in olace of table name in select query is called has inLine view.
+SYNTAX:-select *from (select query);
+generaly sub queries are not supporting order by clause. if we want to use order by clause in sub-query stmt then we use InLine view.
+EX:-
+SQL> select Ename,sal from emp order by sal desc;
+SQL> select *from (select ename, sal from emp order by sal desc) where rownum<=5;
+==========================================
+Analytical functions:- oracle suports the following 3 types of "analytical functions" are 
+1>Row-Number()
+2>RANK()
+3>DENSE-RANK()
+the above functions are assigning rank numbers are group of row's wise in a table automaticaly. are also called has "ranking function's".
+SYntax:-
+Analytical function name() over([partition by<column name>] order by<column name><asc/desc>)
+Ex:-
+SQL> select ename,sal,row_number() over(order by sal desc)rank from emp;
+SQL> select ename,sal,rank() over(order by sal desc) ranks from emp;
+SQL> select ename,sal,Dense_rank() over(order by sal desc) ranks from emp;
+----------------------------------------
+INSERT ALL:-rows into multiple tables....exists table
+insert rows into Asingle table.
+->this commond is used to insert rows multiple tables at a time but the data should be an existing table.
+Syntax:-
+Insert All into<TN1>VALUES(<COL1>,<COL2>,....)INTO<TN2>VALUES(<COL1>,<COL2>...)INTO<TN3>VALUES(<COL1>,<COL2>,...)...INTO<TNn>VALUES(<COL1>,<COL2>,...)SELECT *FROM <OLD<TN>>;
+Ex:-
+SQL> create table test1 as select *from dept where 1=0;
+SQL> create table test2 as select *from dept where 1=0;
+SQL> create table test3 as select *from dept where 1=0;
+************
+SQL> insert all into test1 values(deptno,dname,loc)into test2 values(deptno,dname,loc)into test3 values(deptno,dname,loc)select *from dept;
+=======================================================
+MERGE:-tis command is used to merge data into a table. it is a combination of insert & update commands.
+->if data is matching in both table then matching data is overriding on destination table by using updtae command where as if data is not matching. it will transfer sources table to destination table by using insert command.
+SYNTAX:-
+merge into<destination table name><dest.table alias name>using <source table name><source.table name>on(<join condition>)
+when_matched then
+update set<dest.table alias name>.<column name>=<source table alias name>.<column name>,....,
+when not matched then 
+insert (<dest.table columns>)values(<source table columns>);
+**STEPS:-
+1>SQL> select *from dept;
+2>SQL> create table newDept as select *from dept;
+3>SQL> insert into newdept values (50,'DBA','HYD');
+  SQL> insert into newdept values (60,'sap','pune');
+4>SQL> select *from newdept;----->source table.
+  SQL> select *from dept;----->destination table.
+5>merge into dept d using newdept s on(d.deptno=s.deptno)
+when matched then 
+update set d.dname=s.dname,d.loc=s.loc
+when not matched then
+insert(d.deptno,d.dname,d.loc)values(s.deptno,s.dname,s.loc);
+=======================================================================
+
+*DataBase Security:-there are to machanisams provide database security in real time.
+	->Authentication:-to check uname/pwd.
+	->Authorization:-to give permition. to perform operation.
+		
+	->DCL commands
+		1>Grant
+		2>Revoke
+
+1>Grant:-grant command is used for giving a privilege or permisiion for a user to perform operations on the database.
+Syntax:-grant<privilage name> on <object name> to {user};
+EX:- SQL> grant select on dept to A;
+EX:- SQL>grant dba to user;
+
+
+Privilage Name:-used to granted Permission to the user for some right are all and select.(select,insert,update...)
+Object name:-it is the "name of database" object like table,views and stored procedure etc...
+User:-used for to whom an access rights is bring granted.
+
+2>Revoke:-revoke command removes user access right/privileges to the database OR taking back the permission that is given to a user.
+Syntax:-Remove <privilage name> on <Object name> from {user};
+SQL> revoke select on dept from A;
+Revoke succeeded.
+SQL> revoke All on dept from A;
+Revoke succeeded.
+EX:-SQL> revoke  dba from A;
+
+****EX:-CREATE USER <USERNAME> IDENTIFIED BY <PASSWORD>;
+SQL> conn
+Enter user-name: scott/tiger
+Connected.
+SQL> create user A identified by A;
+create user A identified by A
+                            *
+ERROR at line 1:
+ORA-01031: insufficient privileges
+
+SQL> conn
+Enter user-name: system/manager
+Connected.
+SQL> grant DBA to scott;
+
+Grant succeeded.
+
+step 1>connect to Db with DBA(scott):-
+SQL> conn
+Enter user-name: scott/tiger
+Connected.
+step 2>creating a New user:-
+SQL> create user A identified by A;
+
+User created.
+Note:-
+->in this case we create user but this user is called as dummy user be cause is not having permissios to connect to database. so that we should gic=ve permissions to user by using "grant" command.
+STEP 3>Granting connecting permissions to user "A":
+SQL> grant connect,resource to A;
+
+Grant succeeded.
+	connect -> to connect to DataBase.
+	Resource ->to create tables.
+
+step 4>User "A" is connecting to DB:-
+SQL> conn A/A;
+Connected.
+**How change password:-
+SQL>password 
+Changing password for A
+Old password:A
+New password:B/A
+Retype new password:B/A
+Password changed.
+NOte:
+1.both user and DBA can changed.
+2.password can be changed but username can't changed.
+3.username is not case-sensitive but password is case-sensitive.
+STEP 5>
+user is performing DQL &DML performing operation in data base.
+SQL>select *from dept;
+(OR)
+SQL>select *from scott.dept;
+ERROR at line 1:
+ORA-00942: table or view does not exist
+NOTE:-user A want to perform Dql,Dml operationd on db objectes, we need permission from DBA(scott).
+STEP 6>
+GRANTING PERMISSION TO USER "A" BY DBA:-
+SQL> conn scott/tiger
+Connected.
+SQL> grant select on dept to A;
+Grant succeeded.
+SQL> conn A/A
+Connected.
+SQL> select *from scott.dept;
+SQL> conn scott/tiger
+Connected.
+SQL> grant insert,update,delete on dept to A;
+Grant succeeded.
+SQL> grant all on dept to A;
+Grant succeeded.
+STEP 7>
+user "A" is performing operations on Db objects:-
+SQL>conn A/A
+SQL>select,insert,update & delete.
+STEP 8>
+To cancell take back from user "A":-
+SQL> conn scott/tiger
+Connected.
+SQL> revoke select on dept from A;
+Revoke succeeded.
+SQL> revoke All on dept from A;
+Revoke succeeded.
+
+Note:- if we want to give "DBA"(All permissions) permissions to user then we follow the follinfg syntax:
+SQL> grant DBA to <user Name>;
+ex:-SQL>grant DBA to A;
+Grant succeeded.  --->now user "A" will become "DBA".
+SQL>desc All-user;
+SQL>select username from All-users;
+
+SYNTAX TO DROP A USER:-
+SQL>drop user <username>;
+ex:-SQL>drop user A;
+User dropped.
+======================================================================
+**SYNONYM:-
+is database object which is use to create parament alias name OR Alternative Name for table.
+PURPOSE:-
+->HIDING the table name.
+->if table name is very Lengthy.
+Syntax:
+create synonym<synonym name>for <tabke name>;
+ex:-select *from dept;-->base table.
+SQL> create synonym syn1 for dept;
+Synonym created.
+SQL> select *from syn1;
+SQL>insert into syn1 values(50,'DBA','hyd');
+Note:-After creating synonym insted of using table name use can synonym name likebelow.
+NOte:-Desc user_synonyms;
+SQL> desc user_synonyms;
+SQL> select synonym_name,table_name from user_synonyms;
+SYNONYM_NAME                   TABLE_NAME
+------------------------------ ------------------------------
+SYN1                           DEPT
+**drop Synonym:-
+sql>drop synonym<synonym Name>;
+SQL> drop synonym syn1;
+Synonym dropped.
+=====================================================================
+*Table partitions:-
+genneraly table partition's are created on a very large scale database table for deviding into multiple units and each unit is called as a partition.
+->Advantage's of partitions are to improve the performance of application and also data recovery process.
+->oracke support's the following 3Types of table partition's
+1>Range partition
+2>List partition
+3>Hash partition
+->if we want to retrive a partition from a table then we follow the following  syntax.
+SYNTAX:-select *from <TN> partition(<partion name>);
+1>Range partition:-Creating a table partition based on a particular range value.
+SYNTAX:-
+creating table<TN>(<col1><Dt>[size],<col2><dt>[size],....)
+partition by range(<key column name>)
+(partition <partition name1>values less than(value),
+partition <partion name2>values less then(values),...........);
+EX:-
+SQL> create table test1(eid int ,ename varchar2(10),sal number(10))partition by range(sal)
+  2  (partition p1 values less than(1000),
+  3  partition p2 values less than(2000),
+  4  partition p3 values less than(3000));
+Table created.
+
+SQL> insert into test1 values(101,'sri',1500);
+1 row created.
+SQL> insert into test1 values(102,'jki',500);
+1 row created.
+SQL> insert into test1 values(103,'abc',2400);
+1 row created.
+
+SQL> select *from test1 partition(p1);
+       EID ENAME             SAL
+---------- ---------- ----------
+       102 jki               500
+-------------------------------------------------------------
+2>List Partition:-we are creating a table partition based on list of values.
+syntax:-creating table<tn>(<col1><dt>[size],<col2><dt>[size],....)
+partition by list(<key column name>)
+(partition <partition name1> values(v1,v2,v3....),
+partion<partition name2> values(v1,v2,v3....),....partition other values(Defaulet));
+EX:-
+SQL> create table Test2(cid int,cname varchar2(10))
+  2  partition by list(cname)
+  3  (partition p1 values('oracle','mysql'),
+  4  partition p2 values('java','.net','php'),partition others values(default));
+Table created.
+SQL> insert into test2 values(1,'oracle');
+SQL> select *from test2 partition(others);
+       CID CNAME
+---------- ----------
+         3 c
+SQL> select *from test2 partition(p2);
+
+       CID CNAME
+---------- ----------
+         2 java
+         4 php
+----------------------------------------------------------------
+3>Hash partition:-in this method table partiton are created by oracle databese server based on hash Algoritham.
+SYNTAX:-create table <TN>(<col1><DT>[size],<col2><DT>[size],....)partition by hash(<key column name>)partitions<number>;
+EX:-
+SQL> create table test3(empno int,sal number(10))partition by hash(sal) partitions 5;
+Table created.
+NOTE:-
+In oracle db we want to view partitions information's then we follow the following data discinory.
+SQL> desc user_tab_partitions;
+SQL> select partition_name from user_tab_partitions where table_name='test3';
+no rows selected
+NOTE:-
+if we want to weather a table is partitioned (or)not then we follow the following data dictionary is user_tables.
+EX:-
+SQL>DESC user_tables;
+SQL> select partitioned from user_tables where table_name='test1';
+PAR
+--------
+YES
+SQL> select partitioned from user_tables where table_name='emp';
+no rows selected
+
+*****ADDING new partition:-
+Syntax:-Alter table<tn>ADD partition<partition name>values less than(value);
+EX:-
+SQL> Alter table Test1 add partition p4 values less than(5000);
+Table altered.
+*****Droping A partition:-
+Synatx:-Alter table <TN> Drop partition<partition name>;
+EX:-
+SQL> alter table test1 drop partition p4;
+Table altered.
+================================================================================
+*VIEWS(select):-
+->it is a virtual table created on base table's in data base.
+->view does not store data and do sent accupy memory by using select stmt we are get the requierd informanton from the base table.
+->view can restrict to accessing a specific column (or) row's in table.
+->view will provide security to access data from table.
+->to simplify query's to reduce complexcity queries.
+
+TYPES OF VIEWS:-we can create the following to types based on table's.
+1>simple views
+2>complex views
+Syntax:-
+create view<view name>as select *from<TN>[where<condition>];
+
+1>Simple views:-when we create a view to access a required data from a single base table is called as simple view.
+->throw a simple view we can perform DML operations on base table.
+
+EX 1:-create a view to access datafrom dept table.
+SQL>SELECT *FROM DEPT;  -->BASE TABLE
+SQL> create view sv1 as select *from dept;
+View created.
+SQL>selct *from sv1;
+
+TESTING:-
+SQL> insert into sv1 values(50,'dba','hyd');
+1 row created.
+SQL> update sv1 set loc='pune' where deptno=50;
+1 row updated.
+SQL> delete from sv1 where deptno=50;
+1 row deleted.
+--------------------------------------------------------------------
+2>Complex views:-
+->A view is called  as complex view.
+1)when we create a view on more than one table.
+2)A query contains set operations, group by clause, having clause, Aggregative functions distrinct keywords.
+3)complex views are not supporting DML opertion's.
+
+i>BY Using JOIN's:-
+SQL>create view cv1 as select s.stid,s.name,c.cid,c.name,c.fee from student s inner join course c on s.cid=c.cid;
+view created.
+NOTE:-view is not allowed duplicate column names.
+
+ii)By Using SetOperator's:-
+ex:-SQL>create view cv2 as select *from emp_hyd union select *from emp_channai;
+View created.
+SQL> select *from cv2;
+
+
+iii)By Using Aggregative, GroupBy,Having clause:-
+ex:-
+SQL>create view cv3 as select deptno,sum(sal) as sumsal from emp group by deptno having sum(sal)>1000;
+view created.
+SQL> select *from cv3;
+-----------------------------------------------------
+*Force view:-
+create based on table but force view are created without a table.
+syntax:-
+create force view<view name>as select *from<table name>;
+
+
+
+=============================================
+SQL> select *from scott.t1 inner join t2 on scott.t1.id=t2.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

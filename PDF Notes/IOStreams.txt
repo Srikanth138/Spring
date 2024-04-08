@@ -1,0 +1,129 @@
+INPUT:-is a data/information give to program.
+input data is flow inside program.
+in order input data. the program required source(Keyboard,Files...)
+
+OUTPUT:-is a input data is flow inside program.
+in output data is flow outside the program.
+inorder output data the program requited destination(Monitor,file...)
+
+STREAM:-a stream represent input(soure)/output(destination).
+>Stream are used to perform "input" and "output" operations.
+>Stream is an 'object' used for "Reading" & "writing" data.
+>Stream is 'pipe' thru which data "write" (OR) "read".
+1>Byte Stream
+2>Character Stream
+
+1)Byte Stream:-are used to perform input data output operationon byte/binary data.
+>it allows read and write data in 1byte format /byte format.
+
+2)Character Stream:-are used to read &write data in Character Format.
+>Streams are two types and operations performed by are two types(input/read, output/Write).
+//OWN >it allows read and write data in 2byte format.
+
+ALL THES ARE EXISTS IN JAVA.IO.PACKAGE.
+-------------------------------------------------
+1.1>FileOutPutStream:- is used to WRITE data inside file.
+***files are used to save data.
+
+1)Constuctor:-FileOutputStream("String FileName");//new file writting data.
+2)Constuctor:-FileOutputStream("String FileName",boolean append);//this is create or write existing file.if append values is true it write to existing file create new file.
+Ex:-FileOutputStream fos=new FileOutputStream("E:\\file");
+
+->fos.exists(); //method -> return boolean(true/false).
+
+->fos.write(65); //method -> //A.
+
+1.2>FileInputStream: is used to read data from exsting file.
+*>Constuctor:-FileInputStream("String FileName");//it open the file for reading data.
+if the file is not exsits it throws "FileNotFoundException" is subtype of IOException.
+Ex:-FileInputStream fis=new FileInputStream("E:\\file");
+
+->fis.read();
+===================================================================
+
+2.1>DataOutPutStream: is a FileStream.
+->Dataoutput stream to write primitive data.(byte,short,int,long,float,double,boolean) into o/p Stream.
+->DataOutputStream convert primitive data into sequance of byte & write into O/P Stream.
+
+Constructor:-DataOutputStream("outputStream");
+method's:-for each primitive datatype data o/p stream provide one method.
+1>writeInt(int value);
+2>writeFloat(float value);......etc
+Ex:-FileOutputStream fos=new FileOutputStream("E:\\file");
+    DataOutputStream dos=new DataOutputStream("fos");
+>dos.writeInt(5000);....etc
+
+2.2>DataInputStream:- is used to read primitive data from I/P Stream.
+>the data which is written using DataOutPutStream that data can read using DataInPutStream.
+>it convert bytes into primitivedata.
+
+Constructor:-DataInPutStream("InputStream");
+method:-int readInt();....
+Ex:-FileInputStream fis=new FileInputStream("E:\\file");
+    DataInputStream dis=new DataInputStream("fis");
+>int a=dis.readInt();.....etc
+===========================================================================
+SERIALIZATION:-
+ * Serialization is process of converting "ObjectStream to ByteStream(OR)Encrypting.
+ * the class must implement serializable interface. this is no methods 
+ * Constructor:-ObjectOutputStream(o/pStream); > this constructor create object O/P Stream with Destination as O/p stream.
+ * METHOD:-writeObect(object o); >this method is used to convert object into bytes and write inside OutputStream.*/
+
+DeSerialization:-
+ * Deserialization is process of converting "Byte Stream to Objectstream.
+ * Deseriablization id process of reading (or) getting existing state of the object(or) decrypting.
+ * Constructor:-ObjectInputStream(Input Stream); >create object in stream.
+ * method:-object readObject(); >this method reconstruct object of type and return the object address as superType(object).*/
+===============================================================================
+CharacterStream:-
+ *Character Stream used to read & write the Character data Or String.
+ * Character Stream are used to perform input & Output operations on character(or)String type of data.*/
+ 
+1.1>FileWriter:- is used writing characters with in file it allows to create text file.
+ * it Allows to write data in Character(OR)String format.*/
+constructer:-
+FileWrite(String Filename):-this constructer create new file for writing characters.
+fileWrite(String filename,boolean Append):-this constructor is used  create or append data existing file.
+Methods:-
+write(int value)->write one charactor inside file.
+write(char ch[])->write more than one character.
+write(String value)->write a string
+
+1.2>FileReader:-the datawhich is written using file writter is read using fileReader.
+*FileReader is used to read data from existing taxtfile.
+Constructor:-
+FileReader(String file):-this constructor create fileReader object with given file name.
+method:-
+>int read():-this read one character from file and return character as integer type.return type is integer be cause end file value is represent as -1.
+>int read(char ch[]):-read more than one character.
+-------------------------------
+2.1>BufferedReader:- is filter.
+   BufferedReader(Reader)->with address of Reader object.
+ * BufferedReader(Reader,int capacity)-> with given capacity.
+ * read() >read one character.
+ * readLine() > read oneLine and return String Object.*/
+
+	=>BufferReader br=new BufferReader(new FileInputStreamReader(System.in));//wrong
+	=>br.readLine();
+
+2.2>BufferedWriter:-is used to write inside writer using buffer.
+BufferedWriter(Writer capacity)->BufferedWriter object is created with default capacity.
+------------------------------------------------
+PrintWriter:- 
+PrintWriter is used to write primitive data as String .
+ * print writer use writer to write data.
+ * PrintWriter(writer):-object is created withAddress of writer.
+ * PrintWriter provide priont,println & printf method to write primitive data.
+FileWriter fw=new FileWriter("e:\\text.txt");
+PrintWriter pw =new PrintWriter(fw);
+-------------------------------------------------------------
+3.1>CharArrayWriter caw=new CharArrayWriter(); 
+ * CharArrayWriter caw=new CharArrayWriter(int size); default size 32.
+ * char[] tocharArray()
+ * String toString()*/
+3.2>CharArrayReader:-is used to read character from existing character Array.
+
+
+
+
+  

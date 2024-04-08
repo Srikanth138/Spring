@@ -1,0 +1,13 @@
+Angular is Single page application everythink will imported index.html all the component and service class are come in the index.html based on the <body>selector</body>.that will search in the app.component.ts -> app.component.html is contain <router-outlet></router-outlet> this is the main.
+*I think Wrong:-After going to search "app.module.ts" providers: [DemoServiceService]/entryComponents: [UserLoginComponent]
+ //when i write service name here auotmatically imported/going the file then go to the "app-routing.module.ts"
+
+
+
+step1: index file load and fine the <body>inside <app-root></app-root>. then go to that .ts file
+strp2: then load the both html and css file's then find the <router-outlet></router-outlet>
+step3:  <router-outlet> is search for app-routing.module.ts file inside what component are configer the path that component classes will call.
+Note 1: that componet class mandetory to configer the "app.module.ts" inside the declaration we will declare the component classes.
+Note 2: providers:[we can confige the entry service class]
+
+step 4:everything will start only path

@@ -1,0 +1,48 @@
+open ->pgAdmin 4 -> enter password(root)->Right click on Databases create new databse(user srikanth)->expand the user
+click the Tables and create new table.
+
+*right click on table->click the Scripts ->insert Script->Query Editor (? enter the data this "?" sysmbol's)
+ 
+*sequence creation:-1..3Sequence right click-> create and enter the data.
+
+Bytea datatype -> image store: C:/Users/srika/Desktop/padi.jpg
+taxt datatype  -> pdf strore : E:/Resume.pdf
+Date datatype  -> Date format :'2020-10-29'
+
+
+Loadinding drivers and connection:-
+----------------------------------
+Class.forName("org.postgresql.Driver");
+Connection con=DriverManager.getConnection("jdbc:postgresql:srikanth","postgres","root");
+-----------------------------
+postgresql:- age(-) function is predefined.
+EX:-
+SELECT id, name, dob, age(now(),dob) as years FROM job_portal;
+=======================================================================
+SQL Shell Psql:-
+Server [localhost]:
+Database [postgres]: srikanth
+Port [5432]: 5432
+Username [postgres]: postgres
+'chcp' is not recognized as an internal or external command,
+operable program or batch file.
+Password for user postgres:root
+psql (13beta3)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+srikanth=# 
+-------------------------------
+create databse:-
+
+srikanth=# create database sri;
+CREATE DATABASE
+srikanth=#
+
+srikanth-# \c sri
+You are now connected to database "sri" as user "postgres".
+
+sri=# create table s(id integer,name char);
+CREATE TABLE

@@ -1,0 +1,42 @@
+1. first we need to install VSCode(Editor) and NodeJs latest version and install.
+2. ->open VSCode and type terminal as "cmd" at that time we have get the all the credentials in the terminal also after we can create the componets and services.
+3. node -v & npm -v and npm -i check weather the node and npm is install success are not.
+4. Angular installation "npm install -g@angular/cli 
+5. creating a new project-> ng new projectName (ng stand for next generation)->yes
+6. change directory -> cd project name
+7. create a component -> ng g c componentName(here we are write the .html and .css and .ts code every component) -> ng g s serviceName(this is the main service we are communicate the angular to spring application here give the url and take the response)(service only create .ts and .spec.ts)(g -> generator/global, c -> component, s-> service)
+8. we can create a class-> ng g class class name(this is the helper to pass the data)
+
+9. Run the application:- ->ng serve -o(direct run and open browser)/ ->ng serve --open/ ->npm start
+
+10. close/Stop ctrl+c
+
+Angular Execution flow:- start main.ts first
+1. first check the deployment directory structure and load it then go to index.html-> the find the body and <app-root></app-root> then go to that place that is app.component.ts selector: 'app-root', will check and find it and
+-> selector
+The selector tells angular, where to display the template. In the example above selector is app-root. The Angular  whenever it encounters the above tag in the HTML file it replaces it with the template (app.component.html)
+
+The app-root selector is used in index.html, which we will see later.
+
+2. Root Module:- app.module.ts. 
+ we can change then go to change app.moduler.ts->bootstrap: [AppComponent] 
+
+3.Module class:- 
+export class AppModule { }
+
+4.Other files & folders
+We have a few other files under the app folder.
+1.Assets:
+A folder where you can put images and anything else to be copied wholesale when you build your application.
+2.Environments:
+The environment folder is where we define environment variables for various build setups.
+3.polyfills.ts:
+Different browsers have different levels of support of the web standards. 
+4.styles.cs
+Your Angular global styles go here. Most of the time you’ll want to have local styles in your components for easier maintenance, but styles that effect all of your apps need to be in a central place.
+5.test.ts:
+This is the main entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it’s not something you’ll need to edit.
+
+
+<router-outlet></router-outlet>
+

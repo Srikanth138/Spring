@@ -1,0 +1,41 @@
+Java:
+ Interfaces and Abstract classes (must have)
+ Polymorphism (must have)
+ Exception Handling (must have)
+ Control Statements (for, while, break, continue etc..) (must have)
+ Difference between comparator and comparable (must have)
+ Collection Framework (HashMap ,HashTable, List, ArrayList, HashSet
+etc..) (must have)
+ Functional Interfaces (must have)
+ Java8 Stream API (must have)
+ Lambdas (must have)
+ Default Methods (must have)
+ Multithreading (Good to have) 
+
+Spring Framework:
+ Annotations (@controller, @service, @autowired etc) (must have)
+ Spring IOC, Dependency Injection (must have)
+ JDBC template (Good to have)
+ Difference between Spring’s singleton and Java’s singleton (Good to have)
+ Spring Boot (Good to have)
+
+JSP (must have):
+
+Servlet (Good to have)
+
+jQuery:
+ Ajax (must have)
+ Selectors (Good to have)
+ Events (Good to have)
+
+DataBase:
+ Insert, Update, Delete queries (must have)
+ Primary Key, Foreign Key (must have)
+ SQL Joins (must have)
+ Stored Procedures (Good to have)
+ Triggers (Good to have)
+
+DS &amp; Algorithms:
+ Sorting and Searching (Good to have)
+ Operations on Arrays and Strings (Good to have)
+ Hashing (Good to have)

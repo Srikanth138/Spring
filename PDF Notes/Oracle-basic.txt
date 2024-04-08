@@ -1,0 +1,2 @@
+SQL> create sequence stud_sno_seq start with 1000 increment by 1;
+//"INSERT INTO STUDENT VALUES(STUD_SNO_SEQ.NEXTVAL,?,?,?)";

@@ -1,0 +1,47 @@
+
+1.servlet life cycle 
+	1.Loading process
+	2.instantiation
+	3.initialization
+	4.request processing
+	5.destory
+->Which of the following will not directly cause a thread to stop?
+2.context & config
+3.How many object create at a time -> only one first ruquest sending time request object create
+4.What is the maximum size of cookie?
+ ->4 KB(4050bytes)
+Correct Option: 4KB(for each cookie)
+-> https://interviewmania.com/discussion/41755-java-programming-networking
+
+5.what is the difference between href and #ref in jsp?
+
+6.how to copy two arrays in one single Array
+int[] firstArray = {23,45,12,78,4,90,1};//source array  
+int[] secondArray = {77,11,45,88,32,56,3};//destination array  
+int fal = firstArray.length;//determines length of firstArray  
+int sal = secondArray.length;//determines length of secondArray  
+int[] result = new int[fal + sal];  //resultant array of size first array and second array  
+System.arraycopy(firstArray, 0, result, 0, fal);  
+System.arraycopy(secondArray, 0, result, fal, sal);  
+System.out.println(Arrays.toString(result));    //prints the resultant array  
+}  
+}  
+Output:
+[23, 45, 12, 78, 4, 90, 1, 77, 11, 45, 88, 32, 56, 3]
+
+7. Collections Framework in java:-
+Any group of individual objects which are represented as a single unit is known as the collection of the objects. 
+In Java, a separate framework named the “Collection Framework” has been defined in JDK 1.2 which holds all the collection classes and interface in it.
+
+The Collection interface (java.util.Collection) and Map interface (java.util.Map) are the two main “root” interfaces of Java collection classes.
+
+8. with out split it is not possible
+My name is Srikanth
+Srikanth is name My
+
+String s=”My name is Srikanth”;
+SysOut(s);
+String ss[]=s.split(“”);
+for(int i=s.length();i>0;i--){
+sysout(ss[i]);
+}

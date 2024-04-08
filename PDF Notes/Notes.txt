@@ -1,0 +1,5 @@
+page No:60 maven clean install
+page NO:80 Spring Boot Data JPA findBy methods (where clause):--
+
+
+

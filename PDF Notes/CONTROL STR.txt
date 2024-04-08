@@ -1,0 +1,79 @@
+1)SIMPLE IF:-
+-----------
+SQL> DECLARE
+  2  X INT:=10;
+  3  Y INT:=20;
+  4  BEGIN
+  5  IF(Y>X)THEN
+  6  DBMS_OUTPUT.PUT_LINE('Y IS GREATER THEN X');
+  7  END IF;
+  8  END;
+  9  /
+Y IS GREATER THEN X
+
+PL/SQL procedure successfully completed.
+
+2)IF-ELSE:-
+--------
+SQL>  DECLARE
+  2  X INT:=&X;
+  3   BEGIN
+  4  IF MOD(X,2)=0 THEN
+  5  DBMS_OUTPUT.PUT_LINE('EVEN NUMBER');
+  6  ELSE
+  7  DBMS_OUTPUT.PUT_LINE('ODD NUMBER');
+  8  END IF;
+  9  END;
+ 10  /
+Enter value for x: 10
+old   2: X INT:=&X;
+new   2: X INT:=10;
+EVEN NUMBER
+
+PL/SQL procedure successfully completed.
+3)IF-ELSE LADER:-
+----------------
+SQL> DECLARE
+  2  X INT:=&X;
+  3  Y INT:=&Y;
+  4  BEGIN
+  5  IF(X>Y) THEN
+  6  DBMS_OUTPUT.PUT_LINE('X IS BIG NUMBER');
+  7  ELSIF(X=Y) THEN
+  8  DBMS_OUTPUT.PUT_LINE('BOTH ARE EQUAL');
+  9  ELSE
+ 10  DBMS_OUTPUT.PUT_LINE('Y IS BIG NUMBER');
+ 11  END IF;
+ 12  END;
+ 13  /
+Enter value for x: 10
+old   2: X INT:=&X;
+new   2: X INT:=10;
+Enter value for y: 20
+old   3: Y INT:=&Y;
+new   3: Y INT:=20;
+Y IS BIG NUMBER
+
+PL/SQL procedure successfully completed.
+
+4)NESTED IF:-
+----------
+DECLARE
+X INT:=5;
+Y INT:=5;
+Z INT:=6;
+BEGIN
+IF(X>Y) THEN
+IF(X>Z) THEN
+DBMS_OUTPUT.PUT_LINE('X IS BIG NUMBER');
+ELSE
+DBMS_OUTPUT.PUT_LINE('Z IS BIG NUMBER');
+END IF;
+ELSE
+IF(Y>Z) THEN
+DBMS_OUTPUT.PUT_LINE('Y IS BIG NUMBER');
+ELSE
+DBMS_OUTPUT.PUT_LINE('Z IS BIG NUMBER');
+END IF;
+END;
+/

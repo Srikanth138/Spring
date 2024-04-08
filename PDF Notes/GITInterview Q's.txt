@@ -1,0 +1,98 @@
+1. What is Source Code Management?
+It is a process through which we can store and manage any code. Developers write code, Testers write test cases and DevOps engineers write scripts. This code, we can store and manage in Source Code Management. Different teams can store code simultaneously. It saves all changes separately. We can retrieve this code at any point of time.
+2. What are the Advantages of Source Code Management?
+. Helps in Achieving teamwork
+. Can work on different features simultaneously
+. Acts like pipeline b/w offshore & onshore teams
+. Track changes (Minute level)
+. Different people from the same team, as well as different teams, can store code simultaneously (Save all changes separately)
+3. Available Source Code Management tools in the market?
+There are so many Source Code Management tools available in the market. Those are
+
+. Git
+. SVN
+. Perforce
+. Clear case
+
+Out of all these tools, Git is the most advanced tool in the market where we are getting so many advantages compared to other Source Code Management tools.
+3. What is Git?
+Git is one of the Source Code Management tools where we can store any type of code. Git is the most advanced tool in the market now. We also call Git is version control system because every update stored as a new version. At any point of time, we can get any previous version. We can go back to previous versions. Every version will have a unique number. That number we call commit-ID. By using this commit ID, we can track each change i.e. who did what at what time. For every version, it takes incremental backup instead of taking the whole backup. That’s why Git occupies less space. Since it is occupying less space, it is very fast.
+
+4. What are the advantages of Git?
+.Speed:-
+.Parallel branching:-
+.Fully Distributed:-
+
+5. What are the stages in Git?
+1. Workspace:-
+2. Staging area/Indexing area:-
+3. Local repository:-
+4. Central repository:-
+
+6. What is the common branching strategy in Git?
+Product is the same, so one repo. But different features.
+Each feature has one separate branch
+Finally, merge (code) all branches
+For Parallel development
+Can create any no of branches
+Can create one branch on the basis of another branch
+Changes are personal to that particular branch
+Can put files only in branches (not in repo directly)
+The default branch is “Master”
+Files created in a workspace will be visible in any of the branch workspaces until you commit. Once you commit, then that file belongs to that particular branch.
+
+7. How many types of repositories available in Git?
+There are two types of repositories available in Git
+
+Bare Repositories (Central)
+These repositories are only for Storing & Sharing the code
+All central repositories are bare repositories
+
+Non – Bare Repositories (Local)
+In these repositories, we can modify the files
+All local /user repositories are Bare Repositories
+
+8. Can you elaborate commit in Git?
+Storing file permanently in the local repository we call commit.
+
+9. What do you mean by “Snapshot” in Git?
+It is a backup copy for each version git stores in a repository.
+
+10. What is GitHub?
+Git hub is central git repository where we can store code centrally. Git hub belongs to Microsoft Company. We can create any number of repositories in Git hub. All public repositories are free and can be accessible by everyone. Private repositories are not free and can restrict public access for security. We can copy the repository from one account to other accounts also. This process we call as “Fork”. In this repository also we can create branches. The default branch is “Master”
+
+16. Difference between Git pull and Git clone?
+We use these two commands to get changes from central repository. For the first time if you want whole central repository in your local server, we use git clone. It brings entire repository to your local server. Next time onwards you might want only changes instead of whole repository. In this case, we use Git pull.
+Git clone is to get whole copy of central repository
+Git pull is to get only new changes from central repository (Incremental data)
+
+28. What do you mean by IT Infrastructure??
+IT Infrastructure is a composite of the following things
+
+Software
+Network
+People
+Process
+
+54. What is Docker?
+Docker is a tool by using which, we create containers in less time. Docker uses light weight OS in the form of docker images that we will get from docker hub. Docker is open source now. It became so popular because of its unique virtualization concept called “Containerization” which is not there in other tools. We can use docker in both windows and Linux machines.
+
+55. What do you mean by docker image?
+Docker image is light weight OS provided by docker company. We can get any type of docker image form docker hub. We use these docker images to create docker containers. This docker images may contain only OS or OS + other soft wares as well. Each software in docker image, will be stored in the form of layer. Advantage of using docker images is, we can replicate the same environment any no of times.
+
+62. List of Docker components?
+Docker image: – Contains OS (very small) (almost negligible) + soft wares
+Docker Container: – Container like a machine which is created from Docker image.
+Docker file: – Describes steps to create a docker image.
+Docker hub/registry: – Stores all docker images publicly.
+Docker daemon: – Docker service runs at back end
+Above five components we call as Docker components
+
+64. Sample Docker file instructions?
+FROM ubuntu
+WORKDIR /tmp
+RUN echo “Hello” > /tmp/testfile
+ENV myname user1
+COPY testfile1 /tmp
+ADD test.tar.gz /tmp
+
